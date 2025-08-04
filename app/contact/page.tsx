@@ -1,0 +1,316 @@
+import Navigation from "../components/Navigation"
+import Footer from "../components/Footer"
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Globe, Users, Award } from "lucide-react"
+
+const contactInfo = [
+  {
+    icon: Mail,
+    title: "Email Us",
+    details: ["hello@coadal.com", "support@coadal.com"],
+    description: "Get in touch with our team"
+  },
+  {
+    icon: Phone,
+    title: "Call Us",
+    details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+    description: "Speak with our experts"
+  },
+  {
+    icon: MapPin,
+    title: "Visit Us",
+    details: ["123 Innovation Drive", "Tech Valley, CA 94000"],
+    description: "Our headquarters"
+  },
+  {
+    icon: Clock,
+    title: "Business Hours",
+    details: ["Mon - Fri: 9AM - 6PM", "Sat: 10AM - 4PM"],
+    description: "We're here to help"
+  }
+]
+
+const officeLocations = [
+  {
+    city: "San Francisco",
+    country: "USA",
+    address: "123 Innovation Drive, Tech Valley, CA 94000",
+    phone: "+1 (555) 123-4567",
+    email: "sf@coadal.com",
+    timezone: "PST (UTC-8)"
+  },
+  {
+    city: "New York",
+    country: "USA",
+    address: "456 Tech Avenue, Manhattan, NY 10001",
+    phone: "+1 (555) 987-6543",
+    email: "ny@coadal.com",
+    timezone: "EST (UTC-5)"
+  },
+  {
+    city: "London",
+    country: "UK",
+    address: "789 Digital Street, Shoreditch, London EC2A",
+    phone: "+44 20 1234 5678",
+    email: "london@coadal.com",
+    timezone: "GMT (UTC+0)"
+  }
+]
+
+const services = [
+  "Mobile App Development",
+  "Web Development",
+  "Game Development",
+  "UI/UX Design",
+  "Cloud & DevOps",
+  "Digital Marketing"
+]
+
+const budgetRanges = [
+  "$10K - $25K",
+  "$25K - $50K",
+  "$50K - $100K",
+  "$100K - $250K",
+  "$250K+"
+]
+
+export default function ContactPage() {
+  return (
+    <div className="bg-black text-white min-h-screen">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-magenta-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Get In Touch
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto">
+            Ready to start your next project? Let's discuss your vision and create something extraordinary together.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Info Cards */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contactInfo.map((info, index) => (
+              <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-magenta-500/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center mb-6">
+                  <info.icon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
+                <p className="text-gray-400 mb-4">{info.description}</p>
+                {info.details.map((detail, detailIndex) => (
+                  <p key={detailIndex} className="text-magenta-400 font-medium">
+                    {detail}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form and Office Locations */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800">
+              <h2 className="text-3xl font-bold text-white mb-6">Start Your Project</h2>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-300 mb-2">First Name *</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                      placeholder="Your first name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Last Name *</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                      placeholder="Your last name"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-300 mb-2">Email *</label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Phone</label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-gray-300 mb-2">Company</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                    placeholder="Your company name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-300 mb-2">Service Interest *</label>
+                  <select className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-magenta-500 focus:outline-none">
+                    <option value="">Select a service</option>
+                    {services.map((service, index) => (
+                      <option key={index} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-gray-300 mb-2">Project Budget *</label>
+                  <select className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:border-magenta-500 focus:outline-none">
+                    <option value="">Select budget range</option>
+                    {budgetRanges.map((budget, index) => (
+                      <option key={index} value={budget}>{budget}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-gray-300 mb-2">Project Description *</label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-magenta-500 focus:outline-none"
+                    placeholder="Tell us about your project, goals, and requirements..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                >
+                  <Send className="h-5 w-5 mr-2" />
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Office Locations */}
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-white mb-8">Our Offices</h2>
+              {officeLocations.map((office, index) => (
+                <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-white">{office.city}</h3>
+                    <span className="px-3 py-1 bg-magenta-500/20 text-magenta-400 text-sm rounded-full">
+                      {office.country}
+                    </span>
+                  </div>
+                  <div className="space-y-3 text-gray-300">
+                    <div className="flex items-start">
+                      <MapPin className="h-5 w-5 text-magenta-400 mr-3 mt-0.5" />
+                      <span>{office.address}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="h-5 w-5 text-magenta-400 mr-3" />
+                      <span>{office.phone}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail className="h-5 w-5 text-magenta-400 mr-3" />
+                      <span>{office.email}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="h-5 w-5 text-magenta-400 mr-3" />
+                      <span>{office.timezone}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-magenta-400 mb-2">50+</div>
+              <div className="text-gray-400">Happy Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-magenta-400 mb-2">150+</div>
+              <div className="text-gray-400">Projects Completed</div>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-magenta-400 mb-2">5+</div>
+              <div className="text-gray-400">Years Experience</div>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MessageSquare className="h-8 w-8 text-white" />
+              </div>
+              <div className="text-4xl font-bold text-magenta-400 mb-2">24/7</div>
+              <div className="text-gray-400">Support Available</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {[
+              {
+                question: "What is your typical project timeline?",
+                answer: "Project timelines vary based on complexity and scope. A simple mobile app might take 8-12 weeks, while complex enterprise solutions can take 6-12 months. We'll provide a detailed timeline during our initial consultation."
+              },
+              {
+                question: "Do you provide ongoing support and maintenance?",
+                answer: "Yes, we offer comprehensive support and maintenance packages. This includes bug fixes, updates, security patches, and feature enhancements to ensure your project continues to perform optimally."
+              },
+              {
+                question: "What technologies do you specialize in?",
+                answer: "We work with a wide range of technologies including React, React Native, Flutter, Unity, Unreal Engine, Node.js, Python, AWS, and many more. We choose the best technology stack for your specific project requirements."
+              },
+              {
+                question: "How do you handle project communication?",
+                answer: "We maintain transparent communication throughout the project with regular updates, progress reports, and milestone reviews. We use modern collaboration tools and schedule regular check-ins to keep you informed."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                <p className="text-gray-300">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+} 
