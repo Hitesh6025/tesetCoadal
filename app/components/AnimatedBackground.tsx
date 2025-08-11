@@ -16,6 +16,7 @@ export default function AnimatedBackground() {
     let particles: Particle[] = []
 
     window.addEventListener("resize", () => {
+      if (!canvas) return
       width = canvas.width = window.innerWidth
       height = canvas.height = window.innerHeight
     })
@@ -54,6 +55,7 @@ export default function AnimatedBackground() {
     }
 
     function init() {
+      if (!canvas) return
       particles = []
       const numberOfParticles = (canvas.width * canvas.height) / 9000
       for (let i = 0; i < numberOfParticles; i++) {
