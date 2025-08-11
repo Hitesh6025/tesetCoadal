@@ -1,0 +1,103 @@
+"use client"
+import AnimatedBackground from "../../../components/AnimatedBackground"
+import Navigation from "../../../components/Navigation"
+import { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import { Smartphone, Sparkles, Users, ShieldCheck, Trophy, ArrowRight, Gamepad2 } from "lucide-react"
+
+export default function MobileGameDevelopment() {
+  const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)]
+
+  useEffect(() => {
+    sectionRefs.forEach((ref, idx) => {
+      if (ref.current) {
+        gsap.fromTo(
+          ref.current,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.2 + idx * 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        )
+      }
+    })
+  }, [])
+
+  return (
+    <div className="bg-black text-white min-h-screen overflow-hidden">
+      <AnimatedBackground />
+       
+      <main className="relative z-10 flex flex-col items-center min-h-[60vh] py-24">
+        <section ref={sectionRefs[0]} className="w-full flex flex-col items-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-magenta-500 to-purple-600 bg-clip-text text-transparent text-center animate-fade-in">Mobile Game Development</h1>
+          <p className="max-w-2xl text-lg md:text-xl text-gray-300 text-center mb-8 animate-fade-in delay-100">
+            We create innovative, high-performance mobile games for iOS and Android. Our team delivers engaging gameplay, beautiful graphics, and seamless user experiences for all genres.
+          </p>
+          <button className="group bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-105 hover:shadow-lg hover:shadow-magenta-500/25 relative overflow-hidden animate-fade-in delay-200">
+            <Sparkles className="h-5 w-5 relative z-10" />
+            <span className="relative z-10">Get a Free Consultation</span>
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
+          </button>
+        </section>
+
+        <section ref={sectionRefs[1]} className="w-full flex flex-wrap gap-8 justify-center mb-20">
+          <div className="casino-card group bg-black/70 border border-gray-800 rounded-xl p-8 w-80 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20 animate-fade-in">
+            <div className="flex items-center mb-4">
+              <Smartphone className="h-8 w-8 text-magenta-400 group-hover:rotate-12 transition-transform duration-300" />
+              <h2 className="ml-3 text-2xl font-semibold text-magenta-400">Casual & Arcade</h2>
+            </div>
+            <p className="text-gray-400 text-base">Addictive casual and arcade games with smooth controls, fun mechanics, and viral potential.</p>
+          </div>
+          <div className="casino-card group bg-black/70 border border-gray-800 rounded-xl p-8 w-80 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20 animate-fade-in delay-100">
+            <div className="flex items-center mb-4">
+              <Trophy className="h-8 w-8 text-magenta-400 group-hover:rotate-12 transition-transform duration-300" />
+              <h2 className="ml-3 text-2xl font-semibold text-magenta-400">Multiplayer & Social</h2>
+            </div>
+            <p className="text-gray-400 text-base">Real-time multiplayer games with social features, leaderboards, and tournaments for maximum engagement.</p>
+          </div>
+          <div className="casino-card group bg-black/70 border border-gray-800 rounded-xl p-8 w-80 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20 animate-fade-in delay-200">
+            <div className="flex items-center mb-4">
+              <Gamepad2 className="h-8 w-8 text-magenta-400 group-hover:rotate-12 transition-transform duration-300" />
+              <h2 className="ml-3 text-2xl font-semibold text-magenta-400">3D & AR/VR Games</h2>
+            </div>
+            <p className="text-gray-400 text-base">Immersive 3D and AR/VR mobile games with advanced graphics and interactive experiences.</p>
+          </div>
+        </section>
+
+        <section ref={sectionRefs[2]} className="w-full max-w-5xl mx-auto mb-20 animate-fade-in delay-300">
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-black/60 border border-gray-800 rounded-2xl p-8 flex flex-col items-center group transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20">
+              <ShieldCheck className="h-10 w-10 text-magenta-400 mb-3 group-hover:rotate-6 transition-transform duration-300" />
+              <h3 className="text-xl font-bold mb-2 text-magenta-400">Cross-Platform Support</h3>
+              <p className="text-gray-400 text-center">We build games that run flawlessly on both iOS and Android, maximizing your reach and audience.</p>
+            </div>
+            <div className="bg-black/60 border border-gray-800 rounded-2xl p-8 flex flex-col items-center group transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20">
+              <Users className="h-10 w-10 text-magenta-400 mb-3 group-hover:rotate-6 transition-transform duration-300" />
+              <h3 className="text-xl font-bold mb-2 text-magenta-400">User-Centric Design</h3>
+              <p className="text-gray-400 text-center">Our games are designed for intuitive play, beautiful visuals, and high retention rates.</p>
+            </div>
+          </div>
+        </section>
+
+        <section ref={sectionRefs[3]} className="w-full max-w-4xl mx-auto animate-fade-in delay-400">
+          <div className="bg-black/70 border border-gray-800 rounded-2xl p-10 flex flex-col items-center text-center group transition-transform duration-300 hover:scale-105 hover:border-magenta-500 hover:shadow-magenta-500/20">
+            <Smartphone className="h-12 w-12 text-magenta-400 mb-4 group-hover:rotate-6 transition-transform duration-300" />
+            <h3 className="text-2xl font-bold mb-2 text-magenta-400">Ready to Build Your Mobile Game?</h3>
+            <p className="text-gray-400 mb-6">Contact us to turn your mobile game idea into reality. Our experts will guide you from concept to launch.</p>
+            <a href="/contact" className="inline-block bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-magenta-500/25">
+              Get in Touch
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}

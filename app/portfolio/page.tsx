@@ -1,5 +1,3 @@
-import Navigation from "../components/Navigation"
-import Footer from "../components/Footer"
 import { ExternalLink, Github, Play, Smartphone, Globe, Gamepad2, Palette, BarChart3 } from "lucide-react"
 
 const projects = [
@@ -82,8 +80,8 @@ const stats = [
 
 export default function PortfolioPage() {
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Navigation />
+    <div className="text-white min-h-screen">
+       
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -211,8 +209,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 } 

@@ -1,5 +1,3 @@
-import Navigation from "../../components/Navigation"
-import Footer from "../../components/Footer"
 import { Gamepad2, Smartphone, Zap, Users, Award, ArrowRight, CheckCircle, Play, Download } from "lucide-react"
 
 const features = [
@@ -63,7 +61,7 @@ const processSteps = [
 export default function MobileGamesPage() {
   return (
     <div className="bg-black text-white min-h-screen">
-      <Navigation />
+       
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -258,8 +256,6 @@ export default function MobileGamesPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 } 

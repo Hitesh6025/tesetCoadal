@@ -49,17 +49,17 @@ export default function Team() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="team-member-card text-center group">
-              <div className="relative overflow-hidden rounded-2xl mb-4">
+            <div key={index} className="team-member-card text-center group hover:scale-105 transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl mb-4 border border-gray-700 hover:border-purple-500/50 hover:shadow-xl transition-all duration-500">
                 <img
                   src={member.imageUrl || "/placeholder.svg"}
                   alt={member.name}
                   className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-purple-900/20 transition-all duration-500" />
               </div>
-              <h3 className="text-xl font-bold text-white">{member.name}</h3>
-              <p className="text-magenta-400">{member.role}</p>
+              <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">{member.name}</h3>
+              <p className="text-magenta-400 group-hover:text-purple-400 transition-colors duration-300">{member.role}</p>
             </div>
           ))}
         </div>

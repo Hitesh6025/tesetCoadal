@@ -1,0 +1,5 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="8" fill="#FF1B6B"/>
+  <path d="M12 16h24v16H12V16z" fill="white" opacity="0.2"/>
+  <text x="24" y="28" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">LOGO</text>
+</svg>

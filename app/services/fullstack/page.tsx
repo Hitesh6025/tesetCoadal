@@ -1,5 +1,3 @@
-import Navigation from "../../components/Navigation"
-import Footer from "../../components/Footer"
 import { Code, Database, Globe, Zap, Shield, Users, ArrowRight, CheckCircle } from "lucide-react"
 
 const features = [
@@ -54,7 +52,7 @@ const processSteps = [
 export default function FullStackPage() {
   return (
     <div className="bg-black text-white min-h-screen">
-      <Navigation />
+       
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -202,8 +200,6 @@ export default function FullStackPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 } 

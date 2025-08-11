@@ -67,14 +67,14 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="testimonial-card bg-gray-900/50 p-8 rounded-2xl border border-gray-800 flex flex-col"
+              className="testimonial-card group bg-gray-900/50 p-8 rounded-2xl border border-gray-800 hover:border-purple-500/50 hover:scale-[1.02] hover:shadow-xl transition-all duration-500 flex flex-col"
             >
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <p className="text-gray-300 italic mb-6 flex-grow">"{testimonial.quote}"</p>
+              <p className="text-gray-300 italic mb-6 flex-grow group-hover:text-gray-200 transition-colors duration-300">"{testimonial.quote}"</p>
               <div className="flex items-center">
                 <img
                   src={testimonial.avatar || "/placeholder.svg"}
@@ -82,7 +82,7 @@ export default function Testimonials() {
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div>
-                  <p className="font-bold text-white">{testimonial.name}</p>
+                  <p className="font-bold text-white group-hover:text-purple-300 transition-colors duration-300">{testimonial.name}</p>
                   <p className="text-sm text-gray-400">{testimonial.company}</p>
                 </div>
               </div>

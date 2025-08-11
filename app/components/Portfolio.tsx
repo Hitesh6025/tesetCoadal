@@ -2,34 +2,93 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ExternalLink, Code, Smartphone, Monitor, Gamepad2 } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
+
+const technologies = [
+  {
+    name: "Unity",
+    logoPath: "/assets/logos/unity.svg",
+    category: "Game Engine",
+    description: "Cross-platform game development",
+  },
+  {
+    name: "React",
+    logoPath: "/assets/logos/react.svg", 
+    category: "Web Development",
+    description: "Modern web applications",
+  },
+  {
+    name: "React Native",
+    logoPath: "/assets/logos/react-native.svg",
+    category: "Mobile Development", 
+    description: "Cross-platform mobile apps",
+  },
+  {
+    name: "Node.js",
+    logoPath: "/assets/logos/nodejs.svg",
+    category: "Backend",
+    description: "Server-side development",
+  },
+  {
+    name: "TypeScript",
+    logoPath: "/assets/logos/typescript.svg",
+    category: "Programming",
+    description: "Type-safe development",
+  },
+  {
+    name: "AWS",
+    logoPath: "/assets/logos/aws.svg",
+    category: "Infrastructure", 
+    description: "Scalable cloud solutions",
+  },
+  {
+    name: "Next.js",
+    logoPath: "/assets/logos/nextjs.svg",
+    category: "Framework",
+    description: "Full-stack React framework",
+  },
+  {
+    name: "MongoDB",
+    logoPath: "/assets/logos/mongodb.svg",
+    category: "Database",
+    description: "NoSQL database solutions",
+  },
+]
 
 const projects = [
   {
     title: "CyberRonin: Neo-Kyoto",
-    category: "PC & Console",
+    category: "PC & Console Game",
     imageUrl: "/placeholder.svg?width=800&height=600",
-    description:
-      "An open-world action RPG set in a futuristic cyberpunk city. Features advanced combat and deep narrative.",
+    description: "An open-world action RPG set in a futuristic cyberpunk city. Features advanced combat and deep narrative.",
+    technologies: ["Unity", "C#", "Blender"],
+    icon: Gamepad2,
   },
   {
-    title: "Galaxy Raiders",
-    category: "Mobile",
-    imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "A fast-paced multiplayer space shooter for iOS and Android with extensive ship customization.",
+    title: "E-Commerce Platform",
+    category: "Web Application",
+    imageUrl: "/placeholder.svg?width=800&height=600", 
+    description: "A modern, scalable e-commerce platform with real-time inventory and advanced analytics.",
+    technologies: ["Next.js", "TypeScript", "AWS"],
+    icon: Monitor,
   },
   {
-    title: "Mythic Realms",
-    category: "PC & Console",
+    title: "Fitness Tracker App",
+    category: "Mobile Application",
     imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "A high-fantasy MMORPG with a vast world, epic raids, and a player-driven economy.",
+    description: "A comprehensive fitness tracking app with social features and AI-powered recommendations.",
+    technologies: ["React Native", "Node.js", "MongoDB"],
+    icon: Smartphone,
   },
   {
-    title: "Pixel Racers",
-    category: "Mobile",
+    title: "Custom Web Solution",
+    category: "Full-Stack Development",
     imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "A retro-style arcade racing game with pixel art graphics and addictive gameplay.",
+    description: "Tailored web solutions built with modern frameworks and cutting-edge technologies.",
+    technologies: ["React", "TypeScript", "PostgreSQL"],
+    icon: Code,
   },
 ]
 
@@ -38,6 +97,26 @@ export default function Portfolio() {
 
   useEffect(() => {
     if (!sectionRef.current) return
+    
+    // Animate technology badges
+    gsap.fromTo(
+      ".tech-badge",
+      { opacity: 0, scale: 0.5, y: 30 },
+      {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+        },
+      },
+    )
+    
+    // Animate portfolio cards
     gsap.fromTo(
       ".portfolio-card",
       { opacity: 0, y: 100 },
@@ -48,7 +127,7 @@ export default function Portfolio() {
         stagger: 0.2,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: ".portfolio-grid",
           start: "top 70%",
         },
       },
@@ -65,26 +144,59 @@ export default function Portfolio() {
               Creations
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">A glimpse into the worlds we've brought to life.</p>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Bringing ideas to life with cutting-edge technology and creative excellence.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+
+        {/* Portfolio Grid */}
+        <div className="portfolio-grid grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="portfolio-card group relative overflow-hidden rounded-2xl border border-gray-800"
+              className="portfolio-card group relative overflow-hidden rounded-2xl border border-gray-800 hover:border-purple-500/50 hover:scale-[1.02] hover:shadow-xl transition-all duration-500"
             >
-              <img
-                src={project.imageUrl || "/placeholder.svg"}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 text-white">
-                <span className="text-sm font-semibold text-magenta-400">{project.category}</span>
-                <h3 className="text-3xl font-bold mt-2 mb-4">{project.title}</h3>
-                <p className="text-gray-300 opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500">
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={project.imageUrl || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              </div>
+              
+              <div className="p-6 bg-gray-900/50 backdrop-blur-sm">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-semibold text-magenta-400 bg-magenta-400/10 px-3 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                  <project.icon className="h-5 w-5 text-gray-400" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-magenta-300 transition-colors">
+                  {project.title}
+                </h3>
+                
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {project.description}
                 </p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                
+                <button className="flex items-center space-x-2 text-magenta-400 hover:text-magenta-300 transition-colors group">
+                  <span className="text-sm font-semibold">View Project</span>
+                  <ExternalLink className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
           ))}

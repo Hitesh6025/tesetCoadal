@@ -19,10 +19,10 @@ const services = [
     icon: Globe,
     description: "Build modern, responsive websites and web applications",
     services: [
-      { name: "Frontend Development", href: "/services/frontend", description: "React, Vue, Angular development" },
-      { name: "Backend Development", href: "/services/backend", description: "Node.js, Python, Java backends" },
-      { name: "Full Stack Development", href: "/services/fullstack", description: "Complete web solutions" },
-      { name: "E-commerce Development", href: "/services/ecommerce", description: "Online stores and marketplaces" }
+      { name: "Frontend Development", href: "/services/web-development/frontend-development", description: "React, Vue, Angular development" },
+      { name: "Backend Development", href: "/services/web-development/backend-development", description: "Node.js, Python, Java backends" },
+      { name: "Full Stack Development", href: "/services/web-development/fullstack-development", description: "Complete web solutions" },
+      { name: "E-commerce Development", href: "/services/web-development/ecommerce-development", description: "Online stores and marketplaces" }
     ]
   },
   {
@@ -33,7 +33,7 @@ const services = [
       { name: "Mobile Games", href: "/services/mobile-games", description: "iOS and Android game development" },
       { name: "PC Games", href: "/services/pc-games", description: "Windows and Mac game development" },
       { name: "Console Games", href: "/services/console-games", description: "PlayStation, Xbox, Nintendo" },
-      { name: "VR/AR Games", href: "/services/vr-ar-games", description: "Virtual and augmented reality experiences" }
+      { name: "Browser Games", href: "/services/game-development/browser-game-development", description: "Web-based games with cutting-edge browser technology" }
     ]
   },
   {
@@ -81,7 +81,7 @@ const stats = [
 export default function ServicesPage() {
   return (
     <div className="bg-black text-white min-h-screen">
-      <Navigation />
+       
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
