@@ -416,7 +416,7 @@ export default function HireDeveloper() {
               <div className="text-gray-400">Average Hiring Time</div>
             </div>
             <div className="hero-stat text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">98%</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">99%</div>
               <div className="text-gray-400">Client Satisfaction</div>
             </div>
             {/* <div className="text-center">
@@ -567,9 +567,12 @@ export default function HireDeveloper() {
                       </div>
                     </div>
                     
-                    <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg font-semibold transition-all duration-300">
-                      Hire {role.name}
-                    </button>
+                      <a 
+                        href="/contact"
+                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 block text-center"
+                      >
+                        Hire {role.name}
+                      </a>
                   </div>
                 ))}
               </div>
@@ -616,9 +619,12 @@ export default function HireDeveloper() {
                       </div>
                     </div>
                     
-                    <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg font-semibold transition-all duration-300">
-                      Hire {career.name}
-                    </button>
+                      <a 
+                        href="/contact"
+                        className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-3 rounded-lg font-semibold transition-all duration-300 block text-center"
+                      >
+                        Hire {career.name}
+                      </a>
                   </div>
                 ))}
               </div>

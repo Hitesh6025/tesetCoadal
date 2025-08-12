@@ -398,7 +398,7 @@ export default function ContactPage() {
               <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <div className="text-4xl font-bold text-magenta-400 mb-2">150+</div>
+              <div className="text-4xl font-bold text-magenta-400 mb-2">50+</div>
               <div className="text-gray-400">Projects Completed</div>
             </div>
             <div className="text-center">
