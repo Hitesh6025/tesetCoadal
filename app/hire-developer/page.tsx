@@ -77,31 +77,31 @@ const developerTypes = [
     // rate: "$50-85/hr",
     gradient: "from-orange-500 to-red-500"
   },
-  {
-    title: "Data Scientists",
-    icon: BarChart3,
-    description: "AI/ML experts for intelligent features and data-driven solutions",
-    skills: ["Python", "TensorFlow", "Machine Learning", "Data Analysis", "Statistics"],
-    experience: "3-7+ years",
-    // rate: "$55-90/hr",
-    gradient: "from-indigo-500 to-purple-500"
-  }
+  // {
+  //   title: "Data Scientists",
+  //   icon: BarChart3,
+  //   description: "AI/ML experts for intelligent features and data-driven solutions",
+  //   skills: ["Python", "TensorFlow", "Machine Learning", "Data Analysis", "Statistics"],
+  //   experience: "3-7+ years",
+  //   // rate: "$55-90/hr",
+  //   gradient: "from-indigo-500 to-purple-500"
+  // }
 ]
 
 // Developer selection data
 const developersBySkills = [
-  { name: "Unity 3D", icon: "🎮", description: "Game engine specialists", experience: "3-8 years", rate: "$50-85/hr" },
-  { name: "React.js", icon: "⚛️", description: "Frontend React developers", experience: "2-6 years", rate: "$40-70/hr" },
-  { name: "Node.js", icon: "🟢", description: "Backend JavaScript developers", experience: "2-7 years", rate: "$45-75/hr" },
-  { name: "Python", icon: "🐍", description: "Full-stack Python developers", experience: "2-8 years", rate: "$40-80/hr" },
-  { name: "React Native", icon: "📱", description: "Cross-platform mobile developers", experience: "2-6 years", rate: "$45-70/hr" },
-  { name: "Flutter", icon: "🦋", description: "Google's UI toolkit specialists", experience: "2-5 years", rate: "$40-65/hr" },
-  { name: "Swift", icon: "🍎", description: "iOS native app developers", experience: "3-7 years", rate: "$50-80/hr" },
-  { name: "Kotlin", icon: "🤖", description: "Android native app developers", experience: "2-6 years", rate: "$45-75/hr" },
-  { name: "AWS", icon: "☁️", description: "Cloud infrastructure experts", experience: "3-8 years", rate: "$55-90/hr" },
-  { name: "Docker", icon: "🐳", description: "Containerization specialists", experience: "2-6 years", rate: "$50-80/hr" },
-  { name: "TensorFlow", icon: "🧠", description: "Machine learning engineers", experience: "3-7 years", rate: "$60-95/hr" },
-  { name: "Vue.js", icon: "💚", description: "Progressive framework developers", experience: "2-5 years", rate: "$40-65/hr" }
+  { name: "Unity 3D", icon: "/Technologies/unity-small-svgrepo-com.svg", description: "Game engine specialists", experience: "3-8 years", rate: "$50-85/hr" },
+  { name: "React.js", icon: "/Technologies/react-svgrepo-com.svg", description: "Frontend React developers", experience: "2-6 years", rate: "$40-70/hr" },
+  { name: "Node.js", icon: "/Technologies/node-svgrepo-com.svg", description: "Backend JavaScript developers", experience: "2-7 years", rate: "$45-75/hr" },
+  { name: "Python", icon: "/Technologies/python-svgrepo-com.svg", description: "Full-stack Python developers", experience: "2-8 years", rate: "$40-80/hr" },
+  { name: "React Native", icon: "/Technologies/react-svgrepo-com.svg", description: "Cross-platform mobile developers", experience: "2-6 years", rate: "$45-70/hr" },
+  { name: "Flutter", icon: "/Technologies/flutter-svgrepo-com.svg", description: "Google's UI toolkit specialists", experience: "2-5 years", rate: "$40-65/hr" },
+  { name: "Swift", icon: "/Technologies/swift-svgrepo-com.svg", description: "iOS native app developers", experience: "3-7 years", rate: "$50-80/hr" },
+  { name: "Kotlin", icon: "/Technologies/kotlin-svgrepo-com.svg", description: "Android native app developers", experience: "2-6 years", rate: "$45-75/hr" },
+  { name: "AWS", icon: "/Technologies/aws-svgrepo-com.svg", description: "Cloud infrastructure experts", experience: "3-8 years", rate: "$55-90/hr" },
+  { name: "Docker", icon: "/Technologies/docker-svgrepo-com.svg", description: "Containerization specialists", experience: "2-6 years", rate: "$50-80/hr" },
+  { name: "TensorFlow", icon: "/Technologies/tensorflow-svgrepo-com.svg", description: "Machine learning engineers", experience: "3-7 years", rate: "$60-95/hr" },
+  { name: "Vue.js", icon: "/Technologies/vue-svgrepo-com.svg", description: "Progressive framework developers", experience: "2-5 years", rate: "$40-65/hr" }
 ]
 
 const developersByRoles = [
@@ -391,7 +391,7 @@ export default function HireDeveloper() {
   }, [])
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="text-white min-h-screen">
        
       
       {/* Hero Section */}
@@ -444,7 +444,7 @@ export default function HireDeveloper() {
       </section>
 
       {/* Developer Selection Tabs */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 fade-in-section">
+      <section className="py-20 px-4 sm:px-6 lg:px-8  fade-in-section">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -501,7 +501,9 @@ export default function HireDeveloper() {
                     key={index}
                     className="hover-card bg-black border border-gray-800 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300 text-center"
                   >
-                    <div className="text-4xl mb-4">{skill.icon}</div>
+                    <div className="mb-4 flex justify-center">
+  <img src={skill.icon} alt={skill.name + ' logo'} className="h-12 w-12 object-contain" />
+</div>
                     <h3 className="text-lg font-bold text-white mb-2">{skill.name}</h3>
                     <p className="text-gray-400 text-sm mb-4">{skill.description}</p>
                     <div className="space-y-2 text-sm">
@@ -679,7 +681,7 @@ export default function HireDeveloper() {
       </section>
 
       {/* Hiring Models Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 fade-in-section">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 fade-in-section">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -762,7 +764,7 @@ export default function HireDeveloper() {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 fade-in-section">
+      <section className="py-20 px-4 sm:px-6 lg:px-8  fade-in-section">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -836,7 +838,7 @@ export default function HireDeveloper() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20 fade-in-section">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Ready to Build Your Dream Team?

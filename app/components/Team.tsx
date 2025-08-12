@@ -6,10 +6,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 const teamMembers = [
-  { name: "Alex Johnson", role: "Lead Game Developer", imageUrl: "/placeholder.svg?width=400&height=400" },
-  { name: "Maria Garcia", role: "Art Director", imageUrl: "/placeholder.svg?width=400&height=400" },
-  { name: "David Chen", role: "Lead Game Designer", imageUrl: "/placeholder.svg?width=400&height=400" },
-  { name: "Emily White", role: "Producer", imageUrl: "/placeholder.svg?width=400&height=400" },
+  { name: "Alex Johnson", role: "Lead Game Developer", imageUrl: "/man.avif" },
+  { name: "Maria Garcia", role: "Art Director", imageUrl: "/man.avif" },
+  { name: "David Chen", role: "Lead Game Designer", imageUrl: "/man.avif" },
+  { name: "Emily White", role: "Producer", imageUrl: "/man.avif" },
 ]
 
 export default function Team() {
@@ -36,7 +36,7 @@ export default function Team() {
   }, [])
 
   return (
-    <section id="team" ref={sectionRef} className="py-20 bg-gray-900/50">
+    <section id="team" ref={sectionRef} className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">

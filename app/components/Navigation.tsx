@@ -155,12 +155,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-3 nav-item">
-            <div className="w-10 h-10 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Gamepad2 className="h-6 w-6 text-white" />
+            <div className="w-24 h-24 flex items-center justify-center">
+              <img src="/coadal.svg" alt="Coadal Logo" className="h-20 w-20" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              COADAL
-            </span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8">

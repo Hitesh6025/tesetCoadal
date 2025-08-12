@@ -1,5 +1,7 @@
+
 "use client"
 import { useEffect, useRef } from "react"
+import Link from "next/link"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Lightbulb, Palette, Code, TestTube2, Rocket } from "lucide-react"
@@ -391,9 +393,11 @@ export default function Process() {
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Let's discuss how we can bring your vision to life through our proven development process.
               </p>
-              <button className="bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                Get Started Today
-              </button>
+              <Link href="/contact" passHref legacyBehavior>
+                <button className="bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                  Get Started Today
+                </button>
+              </Link>
             </div>
           </div>
         </div>

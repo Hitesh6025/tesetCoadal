@@ -105,7 +105,7 @@ export default function iOSDevelopmentPage() {
 
   return (
     <Fragment>
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -138,13 +138,15 @@ export default function iOSDevelopmentPage() {
                   Create exceptional iOS applications that delight users and drive business growth. Our expert team builds native iOS apps using Swift and the latest Apple technologies.
                 </AnimatedP>
                 <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <SmoothButton className="px-8 py-4 text-lg">
-                    Start iOS Project
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </SmoothButton>
-                  <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
+                  <a href="/contact" className="block">
+                    <SmoothButton className="px-8 py-4 text-lg flex items-center">
+                      <span>Start iOS Project</span>
+                      <ArrowRight className="ml-2 h-5 w-5 inline-block align-middle" />
+                    </SmoothButton>
+                  </a>
+                  {/* <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
                     View iOS Portfolio
-                  </SmoothButton>
+                  </SmoothButton> */}
                 </AnimatedDiv>
               </AnimatedDiv>
               <AnimatedDiv variants={fadeInRight} className="relative">
@@ -179,7 +181,7 @@ export default function iOSDevelopmentPage() {
           initial="hidden"
           animate={statsControls}
           variants={staggerContainer}
-          className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30"
+          className="py-20 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -239,7 +241,7 @@ export default function iOSDevelopmentPage() {
           initial="hidden"
           animate={techControls}
           variants={staggerContainer}
-          className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30"
+          className="py-20 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -312,7 +314,7 @@ export default function iOSDevelopmentPage() {
           initial="hidden"
           animate={featuresControls}
           variants={staggerContainer}
-          className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30"
+          className="py-20 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -375,11 +377,11 @@ export default function iOSDevelopmentPage() {
             </AnimatedP>
             <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
               <SmoothButton className="px-8 py-4">
-                Get Free iOS Consultation
+                <a href="/contact" className="block w-full h-full">Get Free iOS Consultation</a>
               </SmoothButton>
-              <SmoothButton variant="secondary" className="px-8 py-4">
+              {/* <SmoothButton variant="secondary" className="px-8 py-4">
                 View iOS Portfolio
-              </SmoothButton>
+              </SmoothButton> */}
             </AnimatedDiv>
           </div>
         </AnimatedSection>

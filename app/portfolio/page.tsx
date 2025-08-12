@@ -1,64 +1,67 @@
+"use client"
 import { ExternalLink, Github, Play, Smartphone, Globe, Gamepad2, Palette, BarChart3 } from "lucide-react"
+
+import { useState } from "react"
 
 const projects = [
   {
-    title: "Epic Quest RPG",
-    category: "Game Development",
+    title: "CrickStock11",
+    category: "Betting Platform",
     icon: Gamepad2,
-    image: "/api/placeholder/600/400",
+    image: "/crickstock.jpeg",
     description: "An immersive mobile RPG with stunning graphics and engaging gameplay mechanics. Features include character customization, multiplayer battles, and a vast open world.",
     technologies: ["Unity", "C#", "Firebase", "AWS"],
     stats: { downloads: "2M+", rating: "4.8", revenue: "$500K+" },
     links: { live: "#", github: "#", demo: "#" }
   },
   {
-    title: "TechFlow Dashboard",
-    category: "Web Development",
+    title: "Xegality",
+    category: "Legal Law Firm",
     icon: Globe,
-    image: "/api/placeholder/600/400",
-    description: "A comprehensive analytics dashboard for tech companies. Real-time data visualization, customizable widgets, and advanced reporting capabilities.",
+    image: "/xegality.jpeg",
+    description: "Xegality AI is an innovative platform designed to support legal students with comprehensive study tools. It offers features like consulting, research, and legal writing to enhance learning and professional skills.",
     technologies: ["React", "Node.js", "MongoDB", "D3.js"],
     stats: { users: "50K+", uptime: "99.9%", performance: "95%" },
     links: { live: "#", github: "#", demo: "#" }
   },
   {
-    title: "FitLife Mobile App",
-    category: "Mobile Development",
+    title: "My Foot First",
+    category: "Website Development",
     icon: Smartphone,
-    image: "/api/placeholder/600/400",
-    description: "A fitness tracking app with AI-powered workout recommendations, social features, and integration with wearable devices.",
+    image: "/my-foot-first.jpeg",
+    description: "My Foot First is an AI-powered foot health assistant that analyzes foot structure and offers personalized footwear tips. It provides quick scans, progress tracking, and privacy-focused insights.",
     technologies: ["React Native", "Python", "TensorFlow", "Apple Health"],
     stats: { users: "100K+", workouts: "1M+", rating: "4.9" },
     links: { live: "#", github: "#", demo: "#" }
   },
   {
-    title: "EcoShop E-commerce",
-    category: "Web Development",
+    title: "FinWave",
+    category: "FinTech",
     icon: Globe,
-    image: "/api/placeholder/600/400",
-    description: "A sustainable e-commerce platform for eco-friendly products. Features include carbon footprint tracking, sustainable packaging options, and community features.",
-    technologies: ["Next.js", "Stripe", "PostgreSQL", "Redis"],
+    image: "/finwave.jpeg",
+    description: "Finwave offers a seamless online banking experience with digital core transactions. It provides a user-friendly platform to manage finances and connect with support effortlessly.",
+    technologies: ["React", "Node.js", "MongoDB"],
     stats: { sales: "$2M+", products: "10K+", customers: "25K+" },
     links: { live: "#", github: "#", demo: "#" }
   },
   {
-    title: "NeonRacer VR",
+    title: "Aiexch",
     category: "Game Development",
     icon: Gamepad2,
-    image: "/api/placeholder/600/400",
-    description: "A high-speed VR racing game with realistic physics and stunning visual effects. Compatible with Oculus Quest and HTC Vive.",
+  image: "/gamedev.jpeg",
+    description: "AIEXCH Gaming Exchange is a vibrant platform with live games, tournaments, and sports betting, offering popular titles like Cyber Strike Elite and Neon Racing, with easy fund management and real-time updates.",
     technologies: ["Unreal Engine", "C++", "Oculus SDK", "SteamVR"],
     stats: { players: "10K+", rating: "4.7", awards: "3" },
     links: { live: "#", github: "#", demo: "#" }
   },
   {
-    title: "DesignHub Platform",
-    category: "UI/UX Design",
+    title: "Make My Trip",
+    category: "Travel",
     icon: Palette,
-    image: "/api/placeholder/600/400",
-    description: "A collaborative design platform for creative teams. Features include real-time collaboration, version control, and design system management.",
-    technologies: ["Figma API", "WebRTC", "React", "Socket.io"],
-    stats: { designers: "5K+", projects: "50K+", collaboration: "99%" },
+    image: "/make-my-trip.jpeg",
+    description: "Make My Trip is a comprehensive travel booking platform that offers a wide range of services, including flight and hotel bookings, vacation packages, and travel insurance.",
+    technologies: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    stats: { users: "1M+", bookings: "500K+", rating: "4.8" },
     links: { live: "#", github: "#", demo: "#" }
   }
 ]
@@ -79,6 +82,17 @@ const stats = [
 ]
 
 export default function PortfolioPage() {
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  const filteredProjects = selectedCategory === "all"
+    ? projects
+    : projects.filter(project => {
+        if (selectedCategory === "game") return project.category === "Game Development"
+        if (selectedCategory === "web") return project.category === "Web Development"
+        if (selectedCategory === "mobile") return project.category === "Mobile Development"
+        if (selectedCategory === "design") return project.category === "UI/UX Design"
+        return true
+      })
+
   return (
     <div className="text-white min-h-screen">
        
@@ -113,7 +127,8 @@ export default function PortfolioPage() {
             {categories.map((category, index) => (
               <button
                 key={index}
-                className="px-6 py-3 rounded-full border border-gray-700 text-gray-300 hover:border-magenta-500 hover:text-magenta-400 transition-all duration-300"
+                className={`px-6 py-3 rounded-full border border-gray-700 text-gray-300 hover:border-magenta-500 hover:text-magenta-400 transition-all duration-300 ${selectedCategory === category.value ? "border-magenta-500 text-magenta-400" : ""}`}
+                onClick={() => setSelectedCategory(category.value)}
               >
                 {category.name} ({category.count})
               </button>
@@ -126,15 +141,17 @@ export default function PortfolioPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <div key={index} className="bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800 hover:border-magenta-500/50 transition-all duration-300 hover:scale-105">
                 {/* Project Image */}
                 <div className="relative h-64 bg-gradient-to-br from-magenta-500/20 to-purple-600/20 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <project.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <button className="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center hover:bg-magenta-500 transition-colors">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                  />
+                  <div className="absolute top-4 right-4 flex gap-2 z-10">
+                    {/* <button className="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center hover:bg-magenta-500 transition-colors">
                       <ExternalLink className="h-5 w-5" />
                     </button>
                     <button className="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center hover:bg-magenta-500 transition-colors">
@@ -142,7 +159,7 @@ export default function PortfolioPage() {
                     </button>
                     <button className="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center hover:bg-magenta-500 transition-colors">
                       <Play className="h-5 w-5" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
 
@@ -176,12 +193,15 @@ export default function PortfolioPage() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
-                      View Project
-                    </button>
-                    <button className="px-4 py-2 border border-gray-600 text-gray-300 hover:border-magenta-500 hover:text-magenta-400 rounded-lg font-medium transition-all duration-300">
+                      <button
+                        className="flex-1 bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300"
+                        onClick={() => window.location.href = '/contact'}
+                      >
+                        Get Info
+                      </button>
+                    {/* <button className="px-4 py-2 border border-gray-600 text-gray-300 hover:border-magenta-500 hover:text-magenta-400 rounded-lg font-medium transition-all duration-300">
                       Case Study
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -201,11 +221,11 @@ export default function PortfolioPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-              Start Your Project
+              <a href="/contact" className="block w-full h-full">Start Your Project</a>
             </button>
-            <button className="border border-magenta-500 text-magenta-400 hover:bg-magenta-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+            {/* <button className="border border-magenta-500 text-magenta-400 hover:bg-magenta-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
               View Case Studies
-            </button>
+            </button> */}
           </div>
         </div>
       </section>

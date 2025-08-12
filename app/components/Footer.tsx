@@ -58,9 +58,9 @@ export default function Footer() {
 
   const socialLinks = [
     // { name: "GitHub", icon: Github, href: "https://github.com/coadal", color: "hover:text-gray-300" },
-    { name: "Twitter", icon: Twitter, href: "https://twitter.com/coadal", color: "hover:text-blue-400" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/coadal", color: "hover:text-blue-500" },
-    { name: "Instagram", icon: Instagram, href: "https://instagram.com/coadal", color: "hover:text-pink-400" },
+    { name: "Twitter", icon: Twitter, href: "https://x.com/amansharma5105?s=21", color: "hover:text-blue-400" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/coadal-technology-private-limited/?viewAsMember=true", color: "hover:text-blue-500" },
+    { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/coadal_technology/?hl=en", color: "hover:text-pink-400" },
   ]
 
   return (
@@ -80,12 +80,9 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-1 footer-item">
               <Link href="/" className="flex items-center space-x-3 mb-6 group">
-                <div className="w-12 h-12 bg-gradient-to-r from-magenta-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                  <Gamepad2 className="h-7 w-7 text-white" />
+                <div className="w-24 h-24 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <img src="/coadal.svg" alt="Coadal Logo" className="h-20 w-20" />
                 </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                  COADAL
-                </span>
               </Link>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Expert gaming software development services. We create epic gaming experiences across mobile, PC, and console platforms.
@@ -95,7 +92,7 @@ export default function Footer() {
               {/* <div className="space-y-3">
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Mail className="h-4 w-4 mr-3 text-magenta-500" />
-                  <a href="mailto:hello@coadal.com" className="text-sm">hello@coadal.com</a>
+                  <a href="mailto:coadalhello@.com" className="text-sm">hello@coadal.com</a>
                 </div>
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Phone className="h-4 w-4 mr-3 text-magenta-500" />
@@ -182,15 +179,15 @@ export default function Footer() {
                 <div className="space-y-3">
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Mail className="h-4 w-4 mr-3 text-magenta-500" />
-                  <a href="mailto:hello@coadal.com" className="text-sm">hello@coadal.com</a>
+                  <a href="mailto:info@coadal.com" className="text-sm">info@coadal.com</a>
                 </div>
                 <div className="flex items-center text-gray-400 hover:text-magenta-400 transition-colors duration-300">
                   <Phone className="h-4 w-4 mr-3 text-magenta-500" />
-                  <a href="tel:+1234567890" className="text-sm">+1 (234) 567-890</a>
+                  <a href="tel:+91 9549098255" className="text-sm">+91 95490 98255</a>
                 </div>
                 <div className="flex items-center text-gray-400">
-                  <MapPin className="h-4 w-4 mr-3 text-magenta-500" />
-                  <span className="text-sm">Global Remote Team</span>
+                    <MapPin className="h-5 w-5 mr-3 text-magenta-500" />
+                  <span className="text-sm">Sansthan Path, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017</span>
                 </div>
               </div>
               

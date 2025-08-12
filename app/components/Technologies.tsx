@@ -6,18 +6,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 const technologies = [
-  { name: "Unity", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Unreal Engine", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "C++", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "C#", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Blender", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Maya", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "PlayStation", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Xbox", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Nintendo Switch", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "iOS", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "Android", iconUrl: "/placeholder.svg?width=80&height=80" },
-  { name: "AWS", iconUrl: "/placeholder.svg?width=80&height=80" },
+  { name: "Unity", iconUrl: "/Technologies/unity-small-svgrepo-com.svg" },
+  { name: "Unreal Engine", iconUrl: "/Technologies/unreal-engine-svgrepo-com.svg" },
+  { name: "Blender", iconUrl: "/Technologies/blender-svgrepo-com.svg" },
+  { name: "Maya", iconUrl: "/Technologies/autodesk-svgrepo-com.svg" },
+  { name: "Android", iconUrl: "/Technologies/android-color-svgrepo-com.svg" },
+  { name: "iOS", iconUrl: "/Technologies/ios-svgrepo-com.svg" },
+  { name: "AWS", iconUrl: "/Technologies/aws-svgrepo-com.svg" },
+  { name: "Node.js", iconUrl: "/Technologies/node-svgrepo-com.svg" },
+  { name: "React", iconUrl: "/Technologies/react-svgrepo-com.svg" },
+  { name: "Vue.js", iconUrl: "/Technologies/vue-svgrepo-com.svg" },
+  { name: "Flutter", iconUrl: "/Technologies/flutter-svgrepo-com.svg" },
+  { name: "Swift", iconUrl: "/Technologies/swift-svgrepo-com.svg" },
+  { name: "Docker", iconUrl: "/Technologies/docker-svgrepo-com.svg" },
+  { name: "Kotlin", iconUrl: "/Technologies/kotlin-svgrepo-com.svg" },
+  { name: "Python", iconUrl: "/Technologies/python-svgrepo-com.svg" },
+  { name: "PostgreSQL", iconUrl: "/Technologies/postgresql-logo-svgrepo-com.svg" },
+  { name: "MongoDB", iconUrl: "/Technologies/mongo-svgrepo-com.svg" },
+  { name: "Salesforce", iconUrl: "/Technologies/salesforce-svgrepo-com.svg" },
 ]
 
 export default function Technologies() {
@@ -43,7 +49,7 @@ export default function Technologies() {
   }, [])
 
   return (
-    <section id="technologies" ref={sectionRef} className="py-20 bg-gray-900/50">
+    <section id="technologies" ref={sectionRef} className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">

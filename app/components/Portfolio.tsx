@@ -59,34 +59,34 @@ const technologies = [
 
 const projects = [
   {
-    title: "CyberRonin: Neo-Kyoto",
-    category: "PC & Console Game",
-    imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "An open-world action RPG set in a futuristic cyberpunk city. Features advanced combat and deep narrative.",
-    technologies: ["Unity", "C#", "Blender"],
+    title: "FinWave",
+    category: "Fintech",
+    imageUrl: "/finwave.jpeg",
+    description: "Finwave offers a seamless online banking experience with digital core transactions. It provides a user-friendly platform to manage finances and connect with support effortlessly.",
+    technologies: ["React", "Node.js", "MongoDB"],
     icon: Gamepad2,
   },
   {
-    title: "E-Commerce Platform",
+    title: "My Foot First",
     category: "Web Application",
-    imageUrl: "/placeholder.svg?width=800&height=600", 
-    description: "A modern, scalable e-commerce platform with real-time inventory and advanced analytics.",
+    imageUrl: "/my-foot-first.jpeg",
+    description: "My Foot First is an AI-powered foot health assistant that analyzes foot structure and offers personalized footwear tips. It provides quick scans, progress tracking, and privacy-focused insights.",
     technologies: ["Next.js", "TypeScript", "AWS"],
     icon: Monitor,
   },
   {
-    title: "Fitness Tracker App",
-    category: "Mobile Application",
-    imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "A comprehensive fitness tracking app with social features and AI-powered recommendations.",
-    technologies: ["React Native", "Node.js", "MongoDB"],
+    title: "CrickStock11",
+    category: "Betting Platform",
+    imageUrl: "/crickstock.jpeg",
+    description: "An immersive mobile RPG with stunning graphics and engaging gameplay mechanics. Features include character customization, multiplayer battles, and a vast open world.",
+    technologies: ["React", "Node.js", "MongoDB"],
     icon: Smartphone,
   },
   {
-    title: "Custom Web Solution",
-    category: "Full-Stack Development",
-    imageUrl: "/placeholder.svg?width=800&height=600",
-    description: "Tailored web solutions built with modern frameworks and cutting-edge technologies.",
+    title: "Aiexch",
+    category: "Game Development",
+    imageUrl: "/gamedev.jpeg",
+    description: "AIEXCH Gaming Exchange is a vibrant platform with live games, tournaments, and sports betting, offering popular titles like Cyber Strike Elite and Neon Racing, with easy fund management and real-time updates.",
     technologies: ["React", "TypeScript", "PostgreSQL"],
     icon: Code,
   },
@@ -135,7 +135,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-20 bg-black">
+    <section id="portfolio" ref={sectionRef} className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -171,7 +171,7 @@ export default function Portfolio() {
                   <span className="text-sm font-semibold text-magenta-400 bg-magenta-400/10 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
-                  <project.icon className="h-5 w-5 text-gray-400" />
+                  {/* <project.icon className="h-5 w-5 text-gray-400" /> */}
                 </div>
                 
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-magenta-300 transition-colors">
@@ -183,20 +183,20 @@ export default function Portfolio() {
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
+                  {/* {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
                       className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-md"
                     >
                       {tech}
-                    </span>
-                  ))}
+                    </span> */}
+                  {/* ))} */}
                 </div>
                 
-                <button className="flex items-center space-x-2 text-magenta-400 hover:text-magenta-300 transition-colors group">
+                {/* <button className="flex items-center space-x-2 text-magenta-400 hover:text-magenta-300 transition-colors group">
                   <span className="text-sm font-semibold">View Project</span>
                   <ExternalLink className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

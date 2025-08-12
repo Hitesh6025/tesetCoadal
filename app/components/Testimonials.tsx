@@ -12,21 +12,21 @@ const testimonials = [
     company: "CEO, Alpha Games",
     quote:
       "Coadal delivered beyond our expectations. Their technical expertise and creative input were invaluable to our project's success.",
-    avatar: "/placeholder.svg?width=80&height=80",
+  avatar: "/man.avif",
   },
   {
     name: "Jane Smith",
     company: "Founder, PixelHeart Studios",
     quote:
       "The team's passion for gaming is evident in their work. They are professional, communicative, and incredibly talented.",
-    avatar: "/placeholder.svg?width=80&height=80",
+  avatar: "/man.avif",
   },
   {
     name: "Sam Wilson",
     company: "Indie Developer",
     quote:
       "As a solo developer, I needed a reliable partner. Coadal's team felt like an extension of my own. Highly recommended!",
-    avatar: "/placeholder.svg?width=80&height=80",
+  avatar: "/man.avif",
   },
 ]
 
@@ -53,7 +53,7 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-20 bg-black">
+    <section id="testimonials" ref={sectionRef} className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -76,11 +76,11 @@ export default function Testimonials() {
               </div>
               <p className="text-gray-300 italic mb-6 flex-grow group-hover:text-gray-200 transition-colors duration-300">"{testimonial.quote}"</p>
               <div className="flex items-center">
-                <img
+                {/* <img
                   src={testimonial.avatar || "/placeholder.svg"}
                   alt={testimonial.name}
                   className="w-16 h-16 rounded-full mr-4"
-                />
+                /> */}
                 <div>
                   <p className="font-bold text-white group-hover:text-purple-300 transition-colors duration-300">{testimonial.name}</p>
                   <p className="text-sm text-gray-400">{testimonial.company}</p>

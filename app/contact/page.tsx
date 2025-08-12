@@ -7,37 +7,37 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["hello@coadal.com", "support@coadal.com"],
+    details: ["support@coadal.com", "info@coadal.com"],
     description: "Get in touch with our team"
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+    details: ["+91 95490 98255"],
     description: "Speak with our experts"
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["123 Innovation Drive", "Tech Valley, CA 94000"],
+    details: ["Sansthan Path, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017"],
     description: "Our headquarters"
   },
   {
     icon: Clock,
     title: "Business Hours",
-    details: ["Mon - Fri: 9AM - 6PM", "Sat: 10AM - 4PM"],
+    details: ["24x7"],
     description: "We're here to help"
   }
 ]
 
 const officeLocations = [
   {
-    city: "San Francisco",
-    country: "USA",
-    address: "123 Innovation Drive, Tech Valley, CA 94000",
-    phone: "+1 (555) 123-4567",
-    email: "sf@coadal.com",
-    timezone: "PST (UTC-8)"
+    city: "Jaipur",
+    country: "India",
+    address: "Sansthan Path, Jhalana Gram, Malviya Nagar, Jaipur, Rajasthan 302017",
+    phone: "+91 95490 98255",
+    email: "jaipur@coadal.com",
+    timezone: "IST (UTC+5:30)"
   },
   {
     city: "New York",

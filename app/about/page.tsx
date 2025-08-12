@@ -24,37 +24,6 @@ import {
 
 gsap.registerPlugin(ScrollTrigger)
 
-const teamMembers = [
-  {
-    name: "Alex Rodriguez",
-    role: "CEO & Lead Game Developer",
-    bio: "10+ years creating AAA games. Specialized in Unity and Unreal Engine development.",
-    image: "/placeholder.svg?width=300&height=300",
-    skills: ["Unity", "Unreal Engine", "C#", "Game Design"]
-  },
-  {
-    name: "Sarah Chen",
-    role: "CTO & Full Stack Developer",
-    bio: "Expert in scalable web architectures and cloud infrastructure for gaming platforms.",
-    image: "/placeholder.svg?width=300&height=300",
-    skills: ["React", "Node.js", "AWS", "DevOps"]
-  },
-  {
-    name: "Marcus Johnson",
-    role: "Creative Director",
-    bio: "Award-winning designer with a passion for creating immersive gaming experiences.",
-    image: "/placeholder.svg?width=300&height=300",
-    skills: ["UI/UX", "3D Design", "Art Direction", "Branding"]
-  },
-  {
-    name: "Emily Davis",
-    role: "Mobile Development Lead",
-    bio: "Specialist in iOS and Android game development with 8+ years of experience.",
-    image: "/placeholder.svg?width=300&height=300",
-    skills: ["Swift", "Kotlin", "React Native", "Flutter"]
-  }
-]
-
 const values = [
   {
     icon: Lightbulb,
@@ -86,7 +55,7 @@ const achievements = [
   },
   {
     icon: Users,
-    title: "1M+ Active Players",
+    title: "1M+ Active Users",
     description: "Engaging experiences reaching millions worldwide"
   },
   {
@@ -97,7 +66,7 @@ const achievements = [
   {
     icon: Globe,
     title: "Global Reach",
-    description: "Games published in 50+ countries"
+    description: "Games published in 10+ countries"
   }
 ]
 
@@ -204,10 +173,10 @@ export default function AboutUs() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen text-white overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative pt-32 pb-20 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-gradient-to-r from-magenta-500/10 via-transparent to-purple-500/10" />
+      <section ref={heroRef} className="relative pt-32 pb-20 ">
+        <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-magenta-500/5 to-transparent" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -245,7 +214,7 @@ export default function AboutUs() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section ref={missionRef} className="py-20 bg-gradient-to-br from-gray-900 to-black">
+      <section ref={missionRef} className="py-20 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-12">
@@ -281,76 +250,115 @@ export default function AboutUs() {
             <div className="mission-item">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-magenta-500/20 to-purple-500/20 rounded-2xl blur-xl" />
-                <img
-                  src="/placeholder.svg?width=600&height=400"
-                  alt="Team collaboration"
-                  className="relative rounded-2xl shadow-2xl w-full"
-                />
+                  <img
+                    src="/mission-vision.jpeg"
+                    alt="Team collaboration"
+                    className="relative rounded-2xl shadow-2xl w-full object-cover"
+                  />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section ref={teamRef} className="py-20 bg-black">
+      {/* Founders Section */}
+      <section ref={teamRef} className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our
-              <span className="block bg-gradient-to-r from-magenta-400 to-purple-500 bg-clip-text text-transparent">
-                Team
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Talented individuals united by a shared passion for creating extraordinary gaming experiences
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-8">
+              <div className="team-card">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  Founders of
+                  <span className="block bg-gradient-to-r from-magenta-400 to-purple-500 bg-clip-text text-transparent">
+                    COADAL
+                  </span>
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                  Meet the visionary minds behind COADAL. Our founders bring together decades of experience 
+                  in game development, software engineering, and creative design. Their shared passion for 
+                  innovation and excellence drives our mission to create extraordinary digital experiences 
+                  that push the boundaries of what's possible in gaming and technology.
+                </p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  Together, they have built COADAL from the ground up, establishing a culture of creativity, 
+                  technical excellence, and unwavering commitment to delivering world-class gaming solutions.
+                </p>
+              </div>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div 
-                key={index} 
-                className="team-card group cursor-pointer"
-              >
-                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-magenta-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-magenta-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="team-card group cursor-pointer">
+                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 hover:border-magenta-500/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-magenta-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  <div className="relative z-10">
-                    <div className="relative mb-6">
-                      <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-magenta-500 to-purple-600 p-1">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full rounded-full object-cover"
-                        />
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-xl font-semibold text-white mb-2 text-center">{member.name}</h3>
-                    <p className="text-magenta-400 text-center mb-4 font-medium">{member.role}</p>
-                    <p className="text-gray-400 text-sm text-center mb-4 leading-relaxed">{member.bio}</p>
-                    
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {member.skills.map((skill, skillIndex) => (
-                        <span 
-                          key={skillIndex}
-                          className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-lg"
-                        >
-                          {skill}
-                        </span>
-                      ))}
+                  {/* Large Image Section */}
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
+                    <img
+                      src="/co-founder/Aman.jpeg"
+                      alt="Aman | Co-Founder"
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative z-10 p-6">
+                    <h3 className="text-2xl font-semibold text-white mb-2">Aman Sharma</h3>
+                    <p className="text-magenta-400 mb-3 font-medium">Founder & CEO</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                       Coadal Technology, leading innovation in AI, custom software, and marketing solutions to help businesses grow smarter and faster.
+                    </p>
+                    <div className="flex gap-4 mt-4">
+                      <a href="mailto:aman@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
+                      </a>
+                      <a href="https://www.linkedin.com/in/aman-sharma-633628241/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+
+              <div className="team-card group cursor-pointer">
+                <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-gray-700 hover:border-magenta-500/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-magenta-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Large Image Section */}
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent z-10" />
+                    <img
+                      src="/co-founder/Hritik.jpeg"
+                      alt="Hritik | Co-Founder"
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  
+                  {/* Content Section */}
+                  <div className="relative z-10 p-6">
+                    <h3 className="text-2xl font-semibold text-white mb-2">Hritik Sharma</h3>
+                    <p className="text-purple-400 mb-3 font-medium">Co-Founder</p>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Coadal Technology, committed to building innovative, scalable digital solutions that empower businesses
+                    </p>
+                    <div className="flex gap-4 mt-4">
+                      <a href="mailto:hritik@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
+                      </a>
+                      <a href="https://www.linkedin.com/in/hritiksharma00/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.156 1.459-2.156 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.036 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section ref={valuesRef} className="py-20 bg-gradient-to-br from-gray-900 to-black">
+      <section ref={valuesRef} className="py-20 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -384,7 +392,7 @@ export default function AboutUs() {
       </section>
 
       {/* Achievements Section */}
-      <section ref={achievementsRef} className="py-20 bg-black">
+      <section ref={achievementsRef} className="py-20 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -418,7 +426,7 @@ export default function AboutUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+      <section className="py-20 ">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Work

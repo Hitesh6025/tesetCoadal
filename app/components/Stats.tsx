@@ -7,7 +7,7 @@ import { Award, Users, Code, Star } from "lucide-react"
 gsap.registerPlugin(ScrollTrigger)
 
 const stats = [
-  { icon: Award, value: 50, label: "Games Launched" },
+  { icon: Award, value: 40, label: "Games Launched" },
   { icon: Users, value: 10, label: "Million Players" },
   { icon: Code, value: 100, label: "Expert Developers" },
   { icon: Star, value: 4.9, label: "Client Rating", decimals: 1 },

@@ -125,7 +125,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-gray-900/50">
+    <section id="contact" ref={sectionRef} className="py-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-lg">Email Us</div>
-                  <div className="text-gray-300">hello@coadal.com</div>
+                  <div className="text-gray-300">support@coadal.com</div>
                   <div className="text-magenta-400 text-sm">We respond within 24 hours</div>
                 </div>
               </div>
@@ -168,8 +168,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-lg">Call Us</div>
-                  <div className="text-gray-300">+1 (555) 123-4567</div>
-                  <div className="text-cyan-400 text-sm">Mon-Fri, 9AM-6PM PST</div>
+                  <div className="text-gray-300">+91 95490 98255</div>
+                  <div className="text-cyan-400 text-sm">24x7</div>
                 </div>
               </div>
 
@@ -179,7 +179,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-lg">Visit Us</div>
-                  <div className="text-gray-300">San Francisco, CA</div>
+                  <div className="text-gray-300">Jaipur, Rajasthan</div>
                   <div className="text-blue-400 text-sm">By appointment only</div>
                 </div>
               </div>

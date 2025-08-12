@@ -1,6 +1,8 @@
+
 "use client"
 
 import { useEffect, useRef } from "react"
+import Link from "next/link"
 import { gsap } from "gsap"
 import { ArrowRight, Play, Sparkles, Star, Zap, Code, Gamepad2 } from "lucide-react"
 
@@ -144,10 +146,10 @@ export default function Hero() {
           {/* Main Title with enhanced styling */}
           <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight tracking-tight">
             <span className="block shimmer-text bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent bg-size-200 bg-pos-0">
-              Crafting Epic
+              Coadal
             </span>
-            <span className="block shimmer-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent bg-size-200 bg-pos-0">
-              Gaming Worlds
+            <span className="block shimmer-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent bg-size-200 bg-pos-0 text-3xl md:text-4xl lg:text-5xl">
+              Game & Software Development
             </span>
           </h1>
 
@@ -162,11 +164,11 @@ export default function Hero() {
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 py-8">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">500+</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">40+</div>
               <div className="text-sm text-gray-400">Games Developed</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">50M+</div>
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">10M+</div>
               <div className="text-sm text-gray-400">Players Reached</div>
             </div>
             <div className="text-center">
@@ -177,18 +179,22 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-500 flex items-center space-x-3 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden transform perspective-1000">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform rotate-12 translate-x-[-100%] group-hover:translate-x-[300%]"></div>
-              <Sparkles className="h-6 w-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10 text-lg">Start Your Project</span>
-              <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
-            </button>
+            <Link href="/contact" passHref legacyBehavior>
+              <button className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-500 flex items-center space-x-3 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden transform perspective-1000">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform rotate-12 translate-x-[-100%] group-hover:translate-x-[300%]"></div>
+                <Sparkles className="h-6 w-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="relative z-10 text-lg">Start Your Project</span>
+                <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
+              </button>
+            </Link>
 
-            <button className="group relative border-2 border-purple-500/30 hover:border-purple-400 bg-gradient-to-r from-purple-500/5 to-pink-500/5 hover:from-purple-500/10 hover:to-pink-500/10 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-500 flex items-center space-x-3 hover:scale-105 backdrop-blur-sm overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Play className="h-6 w-6 relative z-10 group-hover:scale-110 transition-transform duration-300" />
-              <span className="relative z-10 text-lg">Watch Our Work</span>
-            </button>
+            <Link href="/portfolio" passHref legacyBehavior>
+              <button className="group relative border-2 border-purple-500/30 hover:border-purple-400 bg-gradient-to-r from-purple-500/5 to-pink-500/5 hover:from-purple-500/10 hover:to-pink-500/10 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-500 flex items-center space-x-3 hover:scale-105 backdrop-blur-sm overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Play className="h-6 w-6 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                <span className="relative z-10 text-lg">Watch Our Work</span>
+              </button>
+            </Link>
           </div>
 
           {/* Tech Icons */}

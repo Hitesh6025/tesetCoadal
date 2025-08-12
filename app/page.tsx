@@ -5,7 +5,7 @@ import Technologies from "./components/Technologies"
 import Portfolio from "./components/Portfolio"
 import Process from "./components/Process"
 import Testimonials from "./components/Testimonials"
-import Team from "./components/Team"
+// import Team from "./components/Team"
 import Blog from "./components/Blog"
 import Contact from "./components/Contact"
 import About from "./components/About"
@@ -24,7 +24,7 @@ export default function Home() {
         <Portfolio />
         <Process />
         <Testimonials />
-        <Team />
+        {/* <Team /> */}
         <Blog />
         <Contact />
       </main>
