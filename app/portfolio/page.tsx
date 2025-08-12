@@ -78,7 +78,7 @@ const stats = [
   { number: "50+", label: "Projects Delivered" },
   { number: "25+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
-  { number: "100%", label: "Client Satisfaction" }
+  { number: "99%", label: "Client Satisfaction" }
 ]
 
 export default function PortfolioPage() {
