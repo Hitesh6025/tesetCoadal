@@ -40,20 +40,20 @@ const officeLocations = [
     timezone: "IST (UTC+5:30)"
   },
   {
-    city: "New York",
-    country: "USA",
-    address: "456 Tech Avenue, Manhattan, NY 10001",
-    phone: "+1 (555) 987-6543",
-    email: "ny@coadal.com",
-    timezone: "EST (UTC-5)"
+    city: "Melbourne",
+    country: "Australia",
+    address: "Melbourne, Australia 3000",
+    phone: "+91 95490 98255",
+    email: "jaipur@coadal.com",
+    timezone: "AEDT (UTC+11)"
   },
   {
-    city: "London",
-    country: "UK",
-    address: "789 Digital Street, Shoreditch, London EC2A",
-    phone: "+44 20 1234 5678",
-    email: "london@coadal.com",
-    timezone: "GMT (UTC+0)"
+    city: "Miami",
+    country: "USA",
+    address: "Miami, FL 33101",
+    phone: "+91 95490 98255",
+    email: "jaipur@coadal.com",
+    timezone: "EST (UTC-5)"
   }
 ]
 

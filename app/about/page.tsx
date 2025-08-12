@@ -51,7 +51,7 @@ const achievements = [
   {
     icon: Award,
     title: "50+ Successful Projects",
-    description: "Delivered across mobile, PC, and console platforms"
+    description: "Delivered across mobile, PC, and Web Platform"
   },
   {
     icon: Users,
@@ -308,7 +308,7 @@ export default function AboutUs() {
                     <p className="text-gray-400 text-sm leading-relaxed">
                        Coadal Technology, leading innovation in AI, custom software, and marketing solutions to help businesses grow smarter and faster.
                     </p>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 mt-4 justify-center">
                       <a href="mailto:aman@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
                       </a>
@@ -341,7 +341,7 @@ export default function AboutUs() {
                     <p className="text-gray-400 text-sm leading-relaxed">
                       Coadal Technology, committed to building innovative, scalable digital solutions that empower businesses
                     </p>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-4 mt-4 justify-center">
                       <a href="mailto:hritik@coadal.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 5.333-8-5.333V6h16zm-16 12V8.489l7.445 4.964a1.996 1.996 0 0 0 2.11 0L20 8.489V18H4z"/></svg>
                       </a>

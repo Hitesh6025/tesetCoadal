@@ -141,9 +141,9 @@ export default function MobileGameDevelopment() {
               <Sparkles className="h-5 w-5 mr-2" />
               <span>Start Your Project</span>
             </a>
-            <a href="/services" className="inline-block border-2 border-cyan-700 hover:border-cyan-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-cyan-400/10 flex items-center justify-center">
+            <a href="/portfolio" className="inline-block border-2 border-cyan-700 hover:border-cyan-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-cyan-400/10 flex items-center justify-center">
               <ArrowRight className="h-5 w-5 mr-2" />
-              <span>Explore Services</span>
+              <span>Explore Portfolio</span>
             </a>
           </div>
         </section>
@@ -347,9 +347,9 @@ export default function MobileGameDevelopment() {
                 <span>Start Your Project</span>
               </a>
               
-              <a href="/services" className="inline-block border-2 border-cyan-700 hover:border-cyan-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-cyan-400/10 flex items-center justify-center">
+              <a href="/portfolio" className="inline-block border-2 border-cyan-700 hover:border-cyan-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-cyan-400/10 flex items-center justify-center">
                 <ArrowRight className="h-5 w-5 mr-2" />
-                <span>Explore Services</span>
+                <span>Explore Portfolio</span>
               </a>
             </div>
           </div>

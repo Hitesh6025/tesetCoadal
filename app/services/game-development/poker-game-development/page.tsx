@@ -187,7 +187,7 @@ export default function PokerGameDevelopment() {
                 <div className="h-px w-16 bg-gradient-to-r from-transparent via-red-400 to-transparent"></div>
               </div>
               
-              <a href="/services" className="group border-3 border-red-500 hover:border-yellow-400 text-white px-12 py-6 rounded-2xl font-black text-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-red-500/20 hover:to-yellow-500/20 backdrop-blur-sm">
+              <a href="/portfolio" className="group border-3 border-red-500 hover:border-yellow-400 text-white px-12 py-6 rounded-2xl font-black text-2xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-red-500/20 hover:to-yellow-500/20 backdrop-blur-sm">
                 <div className="flex items-center justify-center">
                   <Eye className="h-8 w-8 mr-3 group-hover:scale-110 transition-transform duration-300" />
                   <span>View Portfolio</span>
@@ -368,7 +368,7 @@ export default function PokerGameDevelopment() {
         
         {/* Why Choose Our Poker Development - Card Hand Layout */}
         <section ref={sectionRefs[2]} className="w-full max-w-7xl mx-auto mb-40">
-          <h2 className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black text-center mb-20 p-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
             Royal Flush Features
           </h2>
           
@@ -554,7 +554,7 @@ export default function PokerGameDevelopment() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div className="bg-black/30 rounded-lg px-4 py-2 text-yellow-200">
                       <div className="font-bold">Free Consultation</div>
-                      <div className="text-xs text-yellow-300">Worth $500</div>
+                      <div className="text-xs text-yellow-300">Worth ₹5000</div>
                     </div>
                     <div className="bg-black/30 rounded-lg px-4 py-2 text-yellow-200">
                       <div className="font-bold">24/7 Support</div>
@@ -568,7 +568,7 @@ export default function PokerGameDevelopment() {
               <div className="mt-16 pt-8 border-t border-yellow-400/30">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="text-center">
-                    <div className="text-4xl font-black text-yellow-400 mb-2">100M+</div>
+                    <div className="text-4xl font-black text-yellow-400 mb-2">10M+</div>
                     <div className="text-yellow-200 font-bold">Hands Dealt</div>
                     <div className="text-yellow-300/70 text-sm">Across our platforms</div>
                   </div>

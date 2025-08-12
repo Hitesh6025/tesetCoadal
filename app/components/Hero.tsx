@@ -146,7 +146,7 @@ export default function Hero() {
           {/* Main Title with enhanced styling */}
           <h1 ref={titleRef} className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight tracking-tight">
             <span className="block shimmer-text bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent bg-size-200 bg-pos-0">
-              Coadal
+              COADAL
             </span>
             <span className="block shimmer-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent bg-size-200 bg-pos-0 text-3xl md:text-4xl lg:text-5xl">
               Game & Software Development

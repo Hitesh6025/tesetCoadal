@@ -164,7 +164,7 @@ export default function BrowserGameDevelopment() {
                 <span>Launch Your Game</span>
               </div>
             </a>
-            <a href="/services" className="group inline-block border-3 border-cyan-500 hover:border-purple-400 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-purple-500/10 backdrop-blur-sm">
+            <a href="/portfolio" className="group inline-block border-3 border-cyan-500 hover:border-purple-400 text-white px-10 py-5 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-purple-500/10 backdrop-blur-sm">
               <div className="flex items-center justify-center">
                 <Globe className="h-6 w-6 mr-3 group-hover:spin transition-transform duration-1000" />
                 <span>Explore Web Games</span>
@@ -275,7 +275,7 @@ export default function BrowserGameDevelopment() {
         
         {/* Browser Tech Section - Interactive Tech Stack */}
         <section ref={sectionRefs[1]} className="w-full max-w-7xl mx-auto mb-32">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 p-4 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Next-Gen Web Technology
           </h2>
           
@@ -407,7 +407,7 @@ export default function BrowserGameDevelopment() {
         
         {/* Browser Game Impact Section - Stats & Metrics */}
         <section ref={sectionRefs[2]} className="w-full max-w-7xl mx-auto mb-32">
-          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-black text-center mb-16 p-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
             The Browser Gaming Revolution
           </h2>
           

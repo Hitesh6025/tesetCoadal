@@ -131,7 +131,7 @@ export default function CasinoGameDevelopment() {
               <Sparkles className="h-5 w-5 mr-2" />
               <span>Start Your Casino</span>
             </a>
-            <a href="/services" className="inline-block border-2 border-yellow-700 hover:border-yellow-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-yellow-400/10 flex items-center justify-center">
+            <a href="/portfolio" className="inline-block border-2 border-yellow-700 hover:border-yellow-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-yellow-400/10 flex items-center justify-center">
               <ArrowRight className="h-5 w-5 mr-2" />
               <span>View Portfolio</span>
             </a>
@@ -227,7 +227,7 @@ export default function CasinoGameDevelopment() {
         
         {/* Casino Technology Section */}
         <section ref={sectionRefs[1]} className="w-full max-w-7xl mx-auto mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 p-2 bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">
             Casino Gaming Technology
           </h2>
           
@@ -395,9 +395,9 @@ export default function CasinoGameDevelopment() {
                 <span>Start Your Casino</span>
               </a>
               
-              <a href="/services" className="inline-block border-2 border-yellow-700 hover:border-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-yellow-500/10 flex items-center justify-center">
+              <a href="/portfolio" className="inline-block border-2 border-yellow-700 hover:border-yellow-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:bg-yellow-500/10 flex items-center justify-center">
                 <ArrowRight className="h-5 w-5 mr-2" />
-                <span>Explore Services</span>
+                <span>Explore Portfolio</span>
               </a>
             </div>
           </div>

@@ -13,12 +13,12 @@ import {
 } from "../../components/ui/popover"
 
 const navItems = [
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Hire Developer", href: "/hire-developer" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-  { name: "About Us", href: "/about" },
+  // { name: "Contact", href: "/contact" }, 
 ]
 
 // Animation variants for dropdown
@@ -357,13 +357,15 @@ export default function Navigation() {
                 )}
               </div>
             ))}
-            <motion.button 
-              whileHover={{ scale: 1.05 }} 
-              whileTap={{ scale: 0.95 }}
-              className="nav-item bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
-            >
-              Start Project
-            </motion.button>
+            <Link href="/contact">
+              <motion.button 
+                whileHover={{ scale: 1.05 }} 
+                whileTap={{ scale: 0.95 }}
+                className="nav-item bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
+              >
+                Start Project
+              </motion.button>
+            </Link>
           </div>
 
           <button
