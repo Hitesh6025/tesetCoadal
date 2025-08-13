@@ -454,16 +454,16 @@ export default function Navigation() {
                               <span className="text-sm font-medium text-white">Web Development</span>
                             </div>
                             <div className="space-y-2">
-                              <Link href="/services/web-development/frontend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/frontend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Frontend Development
                               </Link>
-                              <Link href="/services/web-development/backend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/backend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Backend Development
                               </Link>
-                              <Link href="/services/web-development/fullstack-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/fullstack-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Full Stack Development
                               </Link>
-                              <Link href="/services/web-development/ecommerce-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/ecommerce-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 E-commerce Development
                               </Link>
                             </div>
@@ -476,16 +476,16 @@ export default function Navigation() {
                               <span className="text-sm font-medium text-white">Game Development</span>
                             </div>
                             <div className="space-y-2">
-                              <Link href="/services/game-development/poker-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/poker-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Poker Game Development
                               </Link>
-                              <Link href="/services/game-development/casino-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/casino-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Casino Game Development
                               </Link>
-                              <Link href="/services/game-development/mobile-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/mobile-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Mobile Game Development
                               </Link>
-                              <Link href="/services/game-development/browser-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                              <Link href="/services/browser-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
                                 Browser Game Development
                               </Link>
                             </div>
