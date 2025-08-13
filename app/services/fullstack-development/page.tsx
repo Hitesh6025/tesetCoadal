@@ -1,4 +1,4 @@
-import AnimatedBackground from "../../../components/AnimatedBackground"
+import AnimatedBackground from "../../components/AnimatedBackground"
 import { Code, Database, Globe, Zap, Shield, Users, ArrowRight, CheckCircle, Layers, Server, Monitor, Cloud } from "lucide-react"
 
 const features = [

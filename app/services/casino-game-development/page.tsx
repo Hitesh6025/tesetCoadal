@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import AnimatedBackground from '../../../components/AnimatedBackground'
+import AnimatedBackground from '../../components/AnimatedBackground'
 import { 
   Dice1, Dice2, Dice3, Star, Crown, Trophy, Shield, 
   Zap, TrendingUp, DollarSign, Users, Award, Target, 
@@ -19,6 +19,11 @@ export default function CasinoGameDevelopment() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+    
+    // Configure ScrollTrigger for better performance
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load"
+    })
     
     // Hero section animations
     const tl = gsap.timeline({ delay: 0.3 })
@@ -49,67 +54,34 @@ export default function CasinoGameDevelopment() {
       )
     }
     
-    // Section animations with ScrollTrigger
+    // Section animations with ScrollTrigger - optimized for better scrolling
     sectionRefs.forEach((ref) => {
       if (ref.current) {
         gsap.fromTo(
           ref.current,
-          { opacity: 0, y: 60 },
+          { opacity: 0, y: 50 },
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: "power3.out",
+            duration: 0.8,
+            ease: "power2.out",
             scrollTrigger: {
               trigger: ref.current,
-              start: "top 80%",
-              toggleActions: "play none none none"
+              start: "top 85%",
+              end: "bottom 15%",
+              toggleActions: "play none none none",
+              fastScrollEnd: true,
+              preventOverlaps: true
             }
           }
         )
       }
     })
-    
-    // Floating dice animation
-    const floatingElements = gsap.utils.toArray<HTMLElement>(".floating-element")
-    if (floatingElements.length > 0) {
-      floatingElements.forEach((element, index) => {
-        gsap.to(element, {
-          y: -20 + Math.sin(index) * 15,
-          x: 15 + Math.cos(index) * 10,
-          rotation: 360,
-          duration: 4 + index * 0.5,
-          ease: "power1.inOut",
-          yoyo: true,
-          repeat: -1,
-          delay: index * 0.2,
-        })
-      })
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
     }
-    
-    // Feature cards hover effect
-    const featureCards = gsap.utils.toArray<HTMLElement>(".feature-card")
-    featureCards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          y: -10,
-          scale: 1.03,
-          duration: 0.3,
-          ease: "power2.out",
-          boxShadow: "0 20px 25px -5px rgba(251, 191, 36, 0.25), 0 10px 10px -5px rgba(251, 191, 36, 0.1)"
-        })
-      })
-      
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          y: 0,
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-          boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-        })
-      })
-    })
   }, [])
 
   return (

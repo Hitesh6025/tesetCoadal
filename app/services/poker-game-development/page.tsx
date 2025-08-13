@@ -1,6 +1,6 @@
 
 "use client"
-import AnimatedBackground from "../../../components/AnimatedBackground"
+import AnimatedBackground from "../../components/AnimatedBackground"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"

@@ -183,7 +183,7 @@ export default function Hero() {
               <button className="group relative bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 hover:from-purple-600 hover:via-pink-600 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-semibold transition-all duration-500 flex items-center space-x-3 hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/30 overflow-hidden transform perspective-1000">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform rotate-12 translate-x-[-100%] group-hover:translate-x-[300%]"></div>
                 <Sparkles className="h-6 w-6 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10 text-lg">Start Your Project</span>
+                <span className="relative z-10 text-lg">Talk To Consultant</span>
                 <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300 relative z-10" />
               </button>
             </Link>

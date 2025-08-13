@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, Gamepad2, ChevronDown, Smartphone, Globe, Code, Palette, BarChart3, Cloud } from "lucide-react"
@@ -133,6 +133,7 @@ export default function Navigation() {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -146,6 +147,24 @@ export default function Navigation() {
   useEffect(() => {
     gsap.fromTo(".nav-item", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.2 })
   }, [])
+
+  // Focus management for mobile menu
+  useEffect(() => {
+    if (isMenuOpen && mobileMenuRef.current) {
+      // Focus the mobile menu container when it opens
+      mobileMenuRef.current.focus()
+      // Prevent background scrolling when menu is open
+      document.body.style.overflow = 'hidden'
+    } else {
+      // Re-enable background scrolling when menu is closed
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup function to restore scroll when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
 
   return (
     <nav
@@ -363,7 +382,7 @@ export default function Navigation() {
                 whileTap={{ scale: 0.95 }}
                 className="nav-item bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
               >
-                Start Project
+                Contact
               </motion.button>
             </Link>
           </div>
@@ -377,100 +396,129 @@ export default function Navigation() {
         </div>
 
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-800">
-            {navItems.map((item) => (
-              <div key={item.name}>
-                {item.hasDropdown ? (
-                  <div>
-                    <button
-                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                      className="flex w-full text-left py-3 text-gray-300 hover:text-magenta-400 transition-colors items-center justify-between"
+          <motion.div
+            ref={mobileMenuRef}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden fixed top-20 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-gray-800 max-h-[calc(100vh-5rem)] overflow-y-auto z-40"
+            style={{ scrollbarWidth: 'thin', scrollbarColor: '#9333ea #1f2937' }}
+            tabIndex={-1}
+          >
+            <div className="px-4 py-6 space-y-2">
+              {navItems.map((item) => (
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                        className="flex w-full text-left py-3 px-2 text-gray-300 hover:text-magenta-400 hover:bg-gray-800/50 rounded-lg transition-all items-center justify-between"
+                      >
+                        {item.name}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {isServicesDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="ml-4 mt-2 space-y-4 bg-gray-900/50 rounded-lg p-4"
+                        >
+                          {/* Mobile App Development */}
+                          <div>
+                            <div className="flex items-center mb-3">
+                              <Smartphone className="h-4 w-4 text-magenta-400 mr-2" />
+                              <span className="text-sm font-medium text-white">Mobile App Development</span>
+                            </div>
+                            <div className="space-y-2">
+                              <Link href="/services/ios-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                iOS App Development
+                              </Link>
+                              <Link href="/services/android-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Android App Development
+                              </Link>
+                              <Link href="/services/react-native" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                React Native Development
+                              </Link>
+                              <Link href="/services/flutter" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Flutter Development
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Web Development */}
+                          <div>
+                            <div className="flex items-center mb-3">
+                              <Globe className="h-4 w-4 text-magenta-400 mr-2" />
+                              <span className="text-sm font-medium text-white">Web Development</span>
+                            </div>
+                            <div className="space-y-2">
+                              <Link href="/services/web-development/frontend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Frontend Development
+                              </Link>
+                              <Link href="/services/web-development/backend-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Backend Development
+                              </Link>
+                              <Link href="/services/web-development/fullstack-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Full Stack Development
+                              </Link>
+                              <Link href="/services/web-development/ecommerce-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                E-commerce Development
+                              </Link>
+                            </div>
+                          </div>
+
+                          {/* Game Development */}
+                          <div>
+                            <div className="flex items-center mb-3">
+                              <Gamepad2 className="h-4 w-4 text-magenta-400 mr-2" />
+                              <span className="text-sm font-medium text-white">Game Development</span>
+                            </div>
+                            <div className="space-y-2">
+                              <Link href="/services/game-development/poker-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Poker Game Development
+                              </Link>
+                              <Link href="/services/game-development/casino-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Casino Game Development
+                              </Link>
+                              <Link href="/services/game-development/mobile-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Mobile Game Development
+                              </Link>
+                              <Link href="/services/game-development/browser-game-development" className="block py-2 pl-6 text-sm text-gray-300 hover:text-magenta-400 hover:bg-gray-800/30 rounded transition-all" onClick={() => setIsMenuOpen(false)}>
+                                Browser Game Development
+                              </Link>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block w-full text-left py-3 px-2 text-gray-300 hover:text-magenta-400 hover:bg-gray-800/50 rounded-lg transition-all"
+                      onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    {isServicesDropdownOpen && (
-                      <div className="pl-4 border-l border-gray-700 ml-4">
-                        {/* Mobile App Development */}
-                        <div className="py-2">
-                          <div className="flex items-center mb-2">
-                            <Smartphone className="h-4 w-4 text-magenta-400 mr-2" />
-                            <span className="text-sm font-medium text-gray-400">Mobile App Development</span>
-                          </div>
-                          <div className="space-y-1">
-                            <Link href="/services/ios-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              iOS App Development
-                            </Link>
-                            <Link href="/services/android-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Android App Development
-                            </Link>
-                            <Link href="/services/react-native" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              React Native Development
-                            </Link>
-                            <Link href="/services/flutter" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Flutter Development
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Web Development */}
-                        <div className="py-2">
-                          <div className="flex items-center mb-2">
-                            <Globe className="h-4 w-4 text-magenta-400 mr-2" />
-                            <span className="text-sm font-medium text-gray-400">Web Development</span>
-                          </div>
-                          <div className="space-y-1">
-                            <Link href="/services/web-development/frontend-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Frontend Development
-                            </Link>
-                            <Link href="/services/web-development/backend-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Backend Development
-                            </Link>
-                            <Link href="/services/web-development/fullstack-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Full Stack Development
-                            </Link>
-                            <Link href="/services/web-development/ecommerce-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              E-commerce Development
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Game Development */}
-                        <div className="py-2">
-                          <div className="flex items-center mb-2">
-                            <Gamepad2 className="h-4 w-4 text-magenta-400 mr-2" />
-                            <span className="text-sm font-medium text-gray-400">Game Development</span>
-                          </div>
-                          <div className="space-y-1">
-                            <Link href="/services/mobile-games" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Mobile Games
-                            </Link>
-                            <Link href="/services/pc-games" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              PC Games
-                            </Link>
-                            <Link href="/services/console-games" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Console Games
-                            </Link>
-                            <Link href="/services/game-development/browser-game-development" className="block py-1 pl-6 text-sm text-gray-300 hover:text-magenta-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
-                              Browser Game Development
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block w-full text-left py-3 text-gray-300 hover:text-magenta-400 transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
+                    </Link>
+                  )}
+                </div>
+              ))}
+              
+              {/* Contact Button for Mobile */}
+              <div className="pt-4 border-t border-gray-800 mt-6">
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }} 
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-gradient-to-r from-magenta-500 to-purple-600 hover:from-magenta-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
                   >
-                    {item.name}
-                  </Link>
-                )}
+                    Contact Us
+                  </motion.button>
+                </Link>
               </div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
         )}
       </div>
     </nav>

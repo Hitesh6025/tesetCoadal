@@ -30,9 +30,20 @@ export const contactSubmissionsTable = pgTable("contact_submissions", {
   updatedAt: timestamp("updatedAt").defaultNow().notNull()
 });
 
+export const adminAuthTable = pgTable("admin_auth", {
+  id: serial().primaryKey(),
+  username: varchar("username", { length: 100 }).notNull().unique(),
+  password: varchar("password", { length: 255 }).notNull(), // This will store hashed password
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().notNull()
+});
+
 // Export types for TypeScript
 export type Blog = typeof blogTable.$inferSelect;
 export type NewBlog = typeof blogTable.$inferInsert;
 
 export type ContactSubmission = typeof contactSubmissionsTable.$inferSelect;
 export type NewContactSubmission = typeof contactSubmissionsTable.$inferInsert;
+
+export type AdminAuth = typeof adminAuthTable.$inferSelect;
+export type NewAdminAuth = typeof adminAuthTable.$inferInsert;

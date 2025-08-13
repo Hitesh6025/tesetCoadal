@@ -1,8 +1,8 @@
 "use client"
 
-import AnimatedBackground from "../../../components/AnimatedBackground"
-import { SmoothCard, SmoothButton } from "../../../components/SmoothAnimations"
-import { useScrollAnimation, fadeInUp, fadeInLeft, fadeInRight, staggerContainer, AnimatedSection, AnimatedDiv, AnimatedH2, AnimatedP } from "../../../hooks/useScrollAnimation"
+import AnimatedBackground from "../../components/AnimatedBackground"
+import { SmoothCard, SmoothButton } from "../../components/SmoothAnimations"
+import { useScrollAnimation, fadeInUp, fadeInLeft, fadeInRight, staggerContainer, AnimatedSection, AnimatedDiv, AnimatedH2, AnimatedP } from "../../hooks/useScrollAnimation"
 import { Code, Palette, Smartphone, Zap, Shield, Users, ArrowRight, CheckCircle, Monitor, Layers, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 import { Fragment } from "react"

@@ -1,4 +1,4 @@
-import AnimatedBackground from "../../../components/AnimatedBackground"
+import AnimatedBackground from "../../components/AnimatedBackground"
 import { ShoppingCart, CreditCard, Package, BarChart3, Shield, Users, ArrowRight, CheckCircle, Smartphone, Globe, Zap, Lock } from "lucide-react"
 
 const features = [
