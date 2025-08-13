@@ -43,10 +43,10 @@ export default function Footer() {
   }, [])
 
   const services = [
-    { name: "Game Development", href: "/services/game-development" },
-    { name: "Mobile App Development", href: "/services/mobile-games" },
-    { name: "Web Development", href: "/services/web-development" },
-    { name: "Full Stack Development", href: "/services/fullstack" },
+    { name: "Browser Game Development", href: "/services/browser-game-development" },
+    { name: "Android App Development", href: "/services/android-development" },
+    { name: "E-commerce Development", href: "/services/ecommerce-development" },
+    { name: "Full Stack Development", href: "/services/fullstack-development" },
   ]
 
   const company = [

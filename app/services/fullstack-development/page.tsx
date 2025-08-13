@@ -1,4 +1,7 @@
+"use client"
+
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useRouter } from "next/navigation";
 import { Code, Database, Globe, Zap, Shield, Users, ArrowRight, CheckCircle, Layers, Server, Monitor, Cloud } from "lucide-react"
 
 const features = [
@@ -113,8 +116,9 @@ const techStack = {
 }
 
 export default function FullStackDevelopmentPage() {
+  const router = useRouter();
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -133,12 +137,12 @@ export default function FullStackDevelopmentPage() {
                   while handling complex business logic seamlessly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
                     Start Your Project
                   </button>
-                  <button className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+                  {/* <button className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     View Our Work
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-purple-500/20 to-pink-600/20 rounded-2xl p-8 border border-gray-800">
@@ -330,12 +334,12 @@ export default function FullStackDevelopmentPage() {
               Let's create a complete web solution that grows with your business and delivers exceptional results
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                Get Free Quote
+              <button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
+                Get Free Consultation
               </button>
-              <button className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+              {/* <button className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                 Schedule Consultation
-              </button>
+              </button> */}
             </div>
           </div>
         </section>

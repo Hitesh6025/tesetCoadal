@@ -1,6 +1,7 @@
 "use client"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useRouter } from "next/navigation";
 import { SmoothCard, SmoothButton } from "../../components/SmoothAnimations"
 import { useScrollAnimation, fadeInUp, fadeInLeft, fadeInRight, staggerContainer, AnimatedSection, AnimatedDiv, AnimatedH2, AnimatedP } from "../../hooks/useScrollAnimation"
 import { Code, Palette, Smartphone, Zap, Shield, Users, ArrowRight, CheckCircle, Monitor, Layers, Sparkles } from "lucide-react"
@@ -90,6 +91,7 @@ const benefits = [
 
 export default function FrontendDevelopmentPage() {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation(0.1, true)
+  const router = useRouter();
   const { ref: servicesRef, controls: servicesControls } = useScrollAnimation(0.1, true)
   const { ref: techRef, controls: techControls } = useScrollAnimation(0.1, true)
   const { ref: processRef, controls: processControls } = useScrollAnimation(0.1, true)
@@ -98,7 +100,7 @@ export default function FrontendDevelopmentPage() {
 
   return (
     <Fragment>
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -128,13 +130,13 @@ export default function FrontendDevelopmentPage() {
                   and drive engagement with cutting-edge frontend technologies.
                 </AnimatedP>
                 <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <SmoothButton className="px-8 py-4 text-lg">
+                  <SmoothButton className="px-8 py-4 text-lg" onClick={() => router.push('/contact')}>
                     Start Your Project
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </SmoothButton>
-                  <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
+                  {/* <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
                     View Our Work
-                  </SmoothButton>
+                  </SmoothButton> */}
                 </AnimatedDiv>
               </AnimatedDiv>
               <AnimatedDiv variants={fadeInRight} className="relative">
@@ -341,12 +343,12 @@ export default function FrontendDevelopmentPage() {
               Let's create a stunning frontend that engages your users and drives your business forward
             </AnimatedP>
             <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <SmoothButton className="px-8 py-4">
+              <SmoothButton className="px-8 py-4" onClick={() => router.push('/contact')}>
                 Get Free Consultation
               </SmoothButton>
-              <SmoothButton variant="secondary" className="px-8 py-4">
+              {/* <SmoothButton variant="secondary" className="px-8 py-4">
                 View Portfolio
-              </SmoothButton>
+              </SmoothButton> */}
             </AnimatedDiv>
           </div>
         </AnimatedSection>

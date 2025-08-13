@@ -1,4 +1,7 @@
+"use client"
+
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useRouter } from "next/navigation";
 import { Database, Server, Shield, Zap, Cloud, Code, ArrowRight, CheckCircle, Lock, Cpu, Network, Layers } from "lucide-react"
 
 const features = [
@@ -106,8 +109,9 @@ const architectureFeatures = [
 ]
 
 export default function BackendDevelopmentPage() {
+  const router = useRouter();
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -126,12 +130,12 @@ export default function BackendDevelopmentPage() {
                   your business logic, data management, and integrations seamlessly.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                  <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
                     Build Your Backend
                   </button>
-                  <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+                  {/* <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     See Case Studies
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-green-500/20 to-blue-600/20 rounded-2xl p-8 border border-gray-800">
@@ -313,12 +317,12 @@ export default function BackendDevelopmentPage() {
               Let's create a powerful backend infrastructure that scales with your business needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                Start Your Project
+              <button className="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
+                Get Free Consultation
               </button>
-              <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+              {/* <button className="border border-green-500 text-green-400 hover:bg-green-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                 Technical Consultation
-              </button>
+              </button> */}
             </div>
           </div>
         </section>

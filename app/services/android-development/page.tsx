@@ -1,6 +1,7 @@
 "use client"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useRouter } from "next/navigation";
 import { SmoothCard, SmoothButton } from "../../components/SmoothAnimations"
 import { useScrollAnimation, fadeInUp, fadeInLeft, fadeInRight, staggerContainer, AnimatedSection, AnimatedDiv, AnimatedH2, AnimatedP } from "../../hooks/useScrollAnimation"
 import { Smartphone, Code, Zap, Shield, Users, ArrowRight, CheckCircle, Layers, Star, Globe, Award } from "lucide-react"
@@ -88,10 +89,10 @@ const benefits = [
 ]
 
 const stats = [
-  { number: "75+", label: "Android Apps Built", icon: Code },
-  { number: "4.7/5", label: "Average Play Store Rating", icon: Star },
-  { number: "5M+", label: "Combined Downloads", icon: Users },
-  { number: "98%", label: "Play Store Approval Rate", icon: Award }
+  { number: "25+", label: "Android Apps Built", icon: Code },
+  { number: "4.8/5", label: "Average Play Store Rating", icon: Star },
+  { number: "2M+", label: "Combined Downloads", icon: Users },
+  { number: "99%", label: "Play Store Approval Rate", icon: Award }
 ]
 
 const deviceSupport = [
@@ -105,6 +106,7 @@ const deviceSupport = [
 
 export default function AndroidDevelopmentPage() {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation(0.1, true)
+  const router = useRouter();
   const { ref: servicesRef, controls: servicesControls } = useScrollAnimation(0.1, true)
   const { ref: techRef, controls: techControls } = useScrollAnimation(0.1, true)
   const { ref: processRef, controls: processControls } = useScrollAnimation(0.1, true)
@@ -114,7 +116,7 @@ export default function AndroidDevelopmentPage() {
 
   return (
     <Fragment>
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -149,13 +151,13 @@ export default function AndroidDevelopmentPage() {
                   Build powerful Android applications that reach billions of users worldwide. Our expert developers create native Android apps using Kotlin and cutting-edge technologies.
                 </AnimatedP>
                 <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <SmoothButton className="px-8 py-4 text-lg">
+                  <SmoothButton className="px-8 py-4 text-lg" onClick={() => router.push('/contact')}>
                     Start Android Project
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </SmoothButton>
-                  <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
+                  {/* <SmoothButton variant="secondary" className="px-8 py-4 text-lg">
                     View Android Portfolio
-                  </SmoothButton>
+                  </SmoothButton> */}
                 </AnimatedDiv>
               </AnimatedDiv>
               <AnimatedDiv variants={fadeInRight} className="relative">
@@ -419,12 +421,12 @@ export default function AndroidDevelopmentPage() {
               Let's create an amazing Android app that reaches millions of users on Google Play Store
             </AnimatedP>
             <AnimatedDiv variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <SmoothButton className="px-8 py-4">
+              <SmoothButton className="px-8 py-4" onClick={() => router.push('/contact')}>
                 Get Free Android Consultation
               </SmoothButton>
-              <SmoothButton variant="secondary" className="px-8 py-4">
+              {/* <SmoothButton variant="secondary" className="px-8 py-4">
                 View Android Portfolio
-              </SmoothButton>
+              </SmoothButton> */}
             </AnimatedDiv>
           </div>
         </AnimatedSection>

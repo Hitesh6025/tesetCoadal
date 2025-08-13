@@ -275,22 +275,22 @@ export default function Navigation() {
                                   </div>
                                   <div className="space-y-1 ml-11">
                                     <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/web-development/frontend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
+                                      <Link href="/services/frontend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
                                         Frontend Development
                                       </Link>
                                     </motion.div>
                                     <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/web-development/backend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
+                                      <Link href="/services/backend-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
                                         Backend Development
                                       </Link>
                                     </motion.div>
                                     <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/web-development/fullstack-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
+                                      <Link href="/services/fullstack-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
                                         Full Stack Development
                                       </Link>
                                     </motion.div>
                                     <motion.div variants={linkVariants} whileHover="hover">
-                                      <Link href="/services/web-development/ecommerce-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
+                                      <Link href="/services/ecommerce-development" className="block text-sm text-gray-300 hover:text-magenta-400 transition-colors py-1">
                                         E-commerce Development
                                       </Link>
                                     </motion.div>

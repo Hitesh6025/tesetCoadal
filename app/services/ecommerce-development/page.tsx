@@ -1,4 +1,7 @@
+"use client"
+
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useRouter } from "next/navigation";
 import { ShoppingCart, CreditCard, Package, BarChart3, Shield, Users, ArrowRight, CheckCircle, Smartphone, Globe, Zap, Lock } from "lucide-react"
 
 const features = [
@@ -129,8 +132,9 @@ const securityFeatures = [
 ]
 
 export default function EcommerceDevelopmentPage() {
+  const router = useRouter();
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="text-white overflow-hidden">
       <AnimatedBackground />
        
       
@@ -149,12 +153,12 @@ export default function EcommerceDevelopmentPage() {
                   enhance customer experience, and grow your digital presence.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                  <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
                     Build Your Store
                   </button>
-                  <button className="border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+                  {/* <button className="border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                     View E-commerce Sites
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="bg-gradient-to-br from-orange-500/20 to-red-600/20 rounded-2xl p-8 border border-gray-800">
@@ -366,12 +370,12 @@ export default function EcommerceDevelopmentPage() {
               Start selling online today with a professionally built e-commerce platform that drives results
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                Get Free E-commerce Quote
+              <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => router.push('/contact')}>
+                Get Free Consultation
               </button>
-              <button className="border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
+              {/* <button className="border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
                 View E-commerce Portfolio
-              </button>
+              </button> */}
             </div>
           </div>
         </section>

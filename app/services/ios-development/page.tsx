@@ -88,10 +88,10 @@ const benefits = [
 ]
 
 const stats = [
-  { number: "50+", label: "iOS Apps Launched", icon: Apple },
+  { number: "10+", label: "iOS Apps Launched", icon: Apple },
   { number: "4.8/5", label: "Average App Rating", icon: Star },
-  { number: "2M+", label: "Combined Downloads", icon: Users },
-  { number: "99.9%", label: "App Store Approval", icon: Award }
+  { number: "1M+", label: "Combined Downloads", icon: Users },
+  { number: "99%", label: "App Store Approval", icon: Award }
 ]
 
 export default function iOSDevelopmentPage() {
