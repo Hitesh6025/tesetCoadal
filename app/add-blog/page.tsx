@@ -332,7 +332,7 @@ export default function AdminBlogPage() {
             </button>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-magenta-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 p-2 bg-purple-400 bg-clip-text text-transparent">
             Create New Blog Post
           </h1>
           
@@ -590,17 +590,7 @@ export default function AdminBlogPage() {
 
             {/* Dynamic Content Blocks */}
             <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xl font-semibold">Blog Content</h2>
-                <button
-                  type="button"
-                  onClick={addContentBlock}
-                  className="flex items-center px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg transition-colors text-sm"
-                >
-                  <Plus className="h-4 w-4 mr-2" />
-                  Add Content Block
-                </button>
-              </div>
+              
               
               {contentBlocks.map((block, index) => (
                 <div key={block.id} className="bg-gray-900/30 border border-gray-700 rounded-lg p-6 space-y-4">
@@ -668,6 +658,18 @@ export default function AdminBlogPage() {
                   </div>
                 </div>
               ))}
+            <div className="flex items-center justify-between">
+                <h2 className="text-xl font-semibold">Blog Content</h2>
+                <button
+                  type="button"
+                  onClick={addContentBlock}
+                  className="flex items-center px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg transition-colors text-sm"
+                >
+                  <Plus className="h-4 w-4 mr-2" />
+                  Add Content Block
+                </button>
+              </div>
+
             </div>
 
             {/* Featured */}

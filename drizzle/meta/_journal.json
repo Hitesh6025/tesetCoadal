@@ -29,6 +29,13 @@
       "when": 1754892036150,
       "tag": "0003_colorful_vin_gonzales",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1755080293996,
+      "tag": "0004_breezy_scarlet_spider",
+      "breakpoints": true
     }
   ]
 }

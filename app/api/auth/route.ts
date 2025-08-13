@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import db from '@/db/config'
 import { adminAuthTable } from '@/db/schema'
 import { eq } from 'drizzle-orm'
+import { and } from 'drizzle-orm'
 import { createHash } from 'crypto'
 
 // Simple session store (in production, use Redis or database)
@@ -26,16 +27,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // For development, use simple hardcoded credentials
-    // Username: admin, Password: admin123
-    const validUsername = 'admin'
-    const validPassword = 'admin123'
+    // Validate credentials from admin_auth table (plain password)
+    const user = await db.select().from(adminAuthTable)
+      .where(and(
+        eq(adminAuthTable.username, username),
+        eq(adminAuthTable.password, password)
+      ));
 
-    if (username !== validUsername || password !== validPassword) {
+    if (!user || user.length === 0) {
       return NextResponse.json(
         { error: 'Invalid credentials' },
         { status: 401 }
-      )
+      );
     }
 
     // Generate session token
@@ -43,7 +46,7 @@ export async function POST(request: NextRequest) {
     const sessionData = {
       username,
       createdAt: Date.now(),
-      expiresAt: Date.now() + (24 * 60 * 60 * 1000) // 24 hours
+      expiresAt: Date.now() + (24 * 60 * 60 * 1000)
     }
 
     sessions.set(sessionToken, sessionData)

@@ -58,12 +58,19 @@ export default function Process() {
   useEffect(() => {
     if (!sectionRef.current || !timelineRef.current) return
     
-    // Create timeline
+    // Get first and last timeline items to sync the line animation
+    const timelineItems = sectionRef.current.querySelectorAll(".timeline-item")
+    const firstItem = timelineItems[0]
+    const lastItem = timelineItems[timelineItems.length - 1]
+    
+    if (!firstItem || !lastItem) return
+
+    // Create timeline with better trigger points
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%",
-        end: "bottom 30%",
+        trigger: firstItem,
+        start: "top 80%",
+        end: () => `${lastItem.getBoundingClientRect().bottom + window.scrollY - firstItem.getBoundingClientRect().top - window.scrollY}px bottom`,
         scrub: 1,
       }
     })
@@ -76,7 +83,6 @@ export default function Process() {
     )
 
     // Animate each timeline item with staggered animations
-    const timelineItems = sectionRef.current.querySelectorAll(".timeline-item")
     timelineItems.forEach((item, index) => {
       const isEven = index % 2 === 0
       
@@ -215,7 +221,7 @@ export default function Process() {
         {/* Timeline Container */}
         <div className="relative max-w-6xl mx-auto">
           {/* Central Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 w-1 h-full transform md:-translate-x-1/2 z-0">
+          <div className="absolute left-8 md:left-1/2 w-1 transform md:-translate-x-1/2 z-0" style={{ top: '2rem', bottom: '2rem' }}>
             <div className="w-full bg-gray-200 dark:bg-gray-700 h-full rounded-full"></div>
             <div 
               ref={timelineRef}
@@ -385,7 +391,11 @@ export default function Process() {
           </div>
           
           {/* Bottom CTA */}
-          <div className="text-center mt-20">
+          
+        </div>
+      </div>
+
+            <div className="text-center mt-20">
             <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 max-w-2xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Ready to Start Your Project?
@@ -400,8 +410,7 @@ export default function Process() {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
+
     </section>
   )
 }

@@ -7,9 +7,9 @@ export default defineConfig({
   dialect: 'postgresql',
   dbCredentials: {
     host: 'aws-0-ap-south-1.pooler.supabase.com',
-    port: 6543,
-    user: 'postgres.juruearhydljrjsqvkuv',
-    password: 'Aman5105@',
+    port: 5432,
+    user: 'postgres.muxzswgfhqzafqzjnkgn',
+    password: 'Hitesh@6025',
     database: 'postgres',
   },
 });
